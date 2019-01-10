@@ -1,0 +1,265 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{% static 'font/iconfont.css' %}"/>
+		<style>
+			*{
+				margin: 0; padding: 0;
+			}
+			ul li{
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			.t{
+				width: 100%; height: 37px; border-bottom: 1px solid black; 
+			}
+			.t-1{
+				width: 990px; height: 37px; line-height: 37px; text-align: right;
+			}
+			.t-1 a{
+				color: black; 
+			}
+			.g{
+				width: 100%; background: #fff;
+			}
+			.g-1{
+				width: 990px; height: 70px; margin: 0 auto;
+			}
+			.g1-1{
+				float: left; display: block; width: 202px; height: 62px;
+			}
+			.g1-2{
+				float: right; display: block; width: 400px; height: 30px;
+				margin-top: 20px;
+			}
+			.g12-1{
+				width: 230px; height: 30px; 
+			}
+			.g12-2{
+				width: 50px; height: 36px; background: red; border: none; color: #fff;
+			}
+			.g-2{
+				width: 990px; height: 70px; margin: 0 auto;
+				margin-top: 50px; font-size: 24px;
+			}
+			
+			.z-5{
+				width: 990px; height: 118px; margin: 50px auto; 
+			}
+			.z5-1{
+				text-align: center;
+			}
+			.z5-2{
+				text-align: center; font-size: 14px; color: #444;
+			}
+			
+			.f-1{
+				width: 990px; margin: 0 auto; height: 40px; background: lightgray; overflow: hidden;
+			}
+			.f1-1{
+				width: 990px; height: 30px; margin-top: 7px;
+			}
+			.f1-1 li{
+				float: left;
+			}
+			.f11-6{
+				margin-left: 10px;
+			}
+			.f11-1{
+				width: 455px; text-align: center; height: 30px; line-height: 30px;
+			}
+			.f11-2{
+				width: 130px; text-align: center; height: 30px; line-height: 30px;
+			}
+			.f11-3{
+				width: 110px; text-align: center; height: 30px; line-height: 30px;
+			}
+			.f11-4{
+				width: 120px; text-align: center; height: 30px; line-height: 30px;
+			}
+			.f11-5{
+				width: 110px; text-align: center; height: 30px; line-height: 30px;
+			}
+			
+			.f1-2{
+				margin: 0 auto; width: 990px;
+			}
+			.f12-1{
+				width: 990px; height: 50px; margin:10px 0; border: 1px solid #ddd;
+				padding: 15px 10px;
+			}
+			.f12-1 li{
+				float: left; font-size: 12px;
+			}
+			.f2-1{
+				width: 25px;
+			}
+			.f2-2{
+				width: 115px;
+			}
+			.f2-3{
+				width: 215px;
+			}
+			.f2-4{
+				width: 142px; padding-left: 10px;
+			}
+			.f2-5{
+				width: 130px; text-align: center;
+			}
+			.f5-1{
+				background: pink; width: 50px; padding: 2px; margin-left: 37px;
+			}
+			.f2-6{
+				width: 110px;
+			}
+			.f6-1, .f6-3{
+				padding: 6px 8px; background: gainsboro; cursor: pointer;
+			}
+			.f6-2{
+				width: 40px; height: 22px; text-align: center;
+			}
+			.f2-7{
+				width: 120px; text-align: center; color: red;
+			}
+			.f2-8{
+				width: 110px; text-align: center;
+			}
+			.d{
+				width: 990px; height: 50px; margin:10px auto; border: 1px solid #ddd;
+				
+			}
+			.d-1{
+				float: left; line-height: 50px; padding-left: 10px;
+			}
+			.d-1 a{
+				font-size: 12px;
+			}
+			.d-2{
+				float: right; line-height: 50px;
+			}
+			.d2-1{
+				color: #aaa; font-size: 12px;
+			}
+			.d2-2{
+				color: red; font-size: 20px; font-weight: 400; display: inline-block;
+				margin-right: 30px;
+			}
+			.d2-3{
+				display: inline-block; width: 100px; height: 50px; line-height: 50px;
+				background: red; color: #fff; text-align: center;
+			}
+		</style>
+		<script src="{% static 'js/jquery-1.12.3.js' %}"></script>
+		<script src="{% static 'js/jquery.cookie.js' %}"></script>
+		<script src="{% static 'js/mycart.js' %}"></script>
+		<script src="{% static 'js/gouwucelidedongxi.js' %}"></script>
+		<script>
+			$(function(){
+				if($.cookie("cart")){
+					var count = gouwuce();
+					$(".nmb").html(count);
+				}else{
+					console.log("请先购物");
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<div class="t">
+			<div class="t-1">
+				您好，欢迎来到LOHO！  【     
+				<a href="#">登录</a>
+				|
+				<a href="#">注册</a>
+				 】 | 
+				<a href="#">我的订单</a>|
+				<a href="#"><i class="iconfont">&#xe635;</i>购物车 <span style="color: red;" class="nmb">0</span></a>|
+				<i class="iconfont">&#xe637;</i>
+				 400-887-1920
+			</div>
+		</div>
+		<div class="g">
+			<div class="g-1">
+				<div class="g1-1"><a href="index.html"><img src="{% static 'img/logo (1).png' %}"/></a></div>
+				<div class="g1-2">
+					<input class="g12-1" type="text" value="搜索商品" /><input class="g12-2" type="button" value="搜索" />
+				</div>
+			</div>
+			<div class="g-2">我的购物车</div>	
+		</div>
+		
+	<!--获取json数据   开始-->	
+		<div class="f-1">
+			<ul class="f1-1">
+				<li><input class="f11-6" type="checkbox" checked="checked" />全选</li>
+				<li class="f11-1">商品</li>
+				<li class="f11-2">单价(元)</li>
+				<li class="f11-3">数量</li>
+				<li class="f11-4">金额(元)</li>
+				<li class="f11-5">操作</li>
+            </ul>
+			</div>
+			<div class="f1-2">
+				<!--<ul class="f12-1 clearfix">
+					<li class="f2-1"><input type="checkbox" checked/></li>
+					<li class="f2-2"><img style="width: 100px; height: 41px;" src="img/detail img/G_1477272722515720180.jpg"/></li>
+					<li class="f2-3">LOHO 光学镜架 金属 枪色金属+玳瑁色板材 复古款 GX9034-C2</li>
+					<li class="f2-4">
+						<p>颜色：枪色</p>
+						<p>条码：201302160824001</p>
+					</li>
+					<li class="f2-5">
+						<p>500</p>
+						<p class="f5-1">促销优惠</p>
+					</li>
+					<li class="f2-6">
+						<div>
+							<span class="f6-1">-</span>
+							<input class="f6-2" value="1"/>
+							<span class="f6-3">+</span>
+						</div>
+					</li>
+					<li class="f2-7">599</li>
+					<li class="f2-8">
+						<a href="#">删除</a>
+						<br />
+						<a href="#">移入收藏夹</a>
+					</li>
+				</ul>-->
+			</div>
+			<div class="d">
+				<div class="d-1">
+					<input type="checkbox" checked="checked" />
+					<a href="#">删除选中</a>
+					<a href="#">清空购物车</a>
+					<a href="#">清除失效宝贝</a>
+				</div>
+				<div class="d-2">
+					<span class="d2-1">商品总价（不含运费）：</span>
+					<span class="d2-2">¥ 0</span>
+					<a class="d2-3" href="#">去结算</a>
+				</div>
+			</div>	
+		</div>
+	<!--结束-->
+	
+		<div class="z-5">
+			<p class="z5-1">
+				<img style="width: 52px; height: 55px;" src="{% static 'img/loho_87.jpg' %}" />
+				<img style="width: 46px; height: 55px;" src="{% static 'img/loho_88.jpg' %}" />
+				<img style="width: 56px; height: 55px;" src="{% static 'img/loho_89.jpg' %}" />
+				<img style="width: 94px; height: 55px;" src="{% static 'img/loho_90.jpg' %}" />
+				<img style="width: 93px; height: 55px;" src="{% static 'img/loho_92.jpg' %}" />
+			</p>
+			<p class="z5-2"><span>ICP备案证书号</span><span>:粤ICP备11106081号</span></p>
+			<p class="z5-2">© 2005-2017 深圳市乐活电子商务有限公司-时尚眼镜品牌 版权所有，并保留所有权利。</p>
+			
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="{% static 'js/jquery-1.12.3.js' %}"></script>
+		<script src="{% static 'js/jquery.cookie.js' %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/zhuce.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'font/iconfont.css' %}"/>
+		<script src="{% static 'js/zhuce.js' %}"></script>
+	</head>
+	<body>
+		<div class="top">
+			<div class="t-1">
+				<a href="index.html">返回首页</a>
+					|
+				<a href="#">帮助中心</a>
+			</div>
+			<div class="t-2">
+				<form class="f-1">
+					<h3 class="f1-1">请填写注册信息（*为必填项）</h3>
+					<p class="f1-3">	
+						在门店购买过商品的用户可凭手机号码和门店分配的密码直接登录。<br />
+						为了您的账号安全，请登陆后重置默认密码！
+					</p>
+					<dl class="f1-2">
+						<dt>手机号</dt>
+						<dd><input class="f1-2-1" type="text" placeholder="手机号" required /><span></span></dd>
+						<dt>邀请码</dt>
+						<dd><input class="f1-2-2" type="text" placeholder="邀请码" required /><span></span></dd>
+						<dt>密码</dt>
+						<dd><input class="f1-2-3" type="text" placeholder="请输入您的密码" required /><span></span></dd>
+						<dt>密码强度</dt>
+						<dd>
+							<ul class="list1">
+								<li>弱</li>
+								<li>中</li>
+								<li>强</li>
+							</ul>
+						</dd>
+						<dt>确认密码</dt>
+						<dd><input class="f1-2-4" type="text" placeholder="请确认您的密码" required /><span></span></dd>
+{#						<dt>验证码</dt>#}
+{#						<dd>#}
+{#							<input class="f1-2-5" style="width: 92px; height: 30px;" type="text" required /><button>获取验证码</button><span></span> #}
+{#						</dd>#}
+						<dt><input class="f1_2_6" type="checkbox" checked="checked" />我已看过并接受用户协议</dt>
+						<input type="button" class="m-1" value="免费注册"></input><span></span>
+					</dl>
+				</form>
+				<div class="f-2">
+					<div class="f2-1">
+						<span class="f2-2-1">已经拥有账号：</span>
+						<a class="a1" href="{% url 'mt:denglu' %}">登陆</a>
+					</div>
+					<div class="f2-2">
+						<span class="f2-2-1">我忘记了密码！：</span>
+						<a class="a2" href="#">忘记密码</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	<!--公用底部-->
+		<div class="box12">
+				<div class="z-1">
+					<ul class="z1-1">
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe604;</i><span>线上线下同价</span></p>
+							<p class="z1-3">Online Single-Phase & Three-phase</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe615;</i><span>港式21步验光</span></p>
+							<p class="z1-3">Hong Kong Style Step 21 Optomety</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe607;</i><span>线上预约线下体验</span></p>
+							<p class="z1-3">Go Online Booking and Offline Experience</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe665;</i><span>全国连锁</span></p>
+							<p class="z1-3">Across The country Have Chain Stores</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe603;</i><span>MTC厂家直销</span></p>
+							<p class="z1-3">Mtc factory Direct Sales Of Products</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe62a;</i>
+							<span>互联网药品信息服务资格证书</span>
+							<!--<span>证号:（粤）经营性20150019</span>-->
+							</p>
+							<p class="z1-3">InternetDrugInformationServiceQualification</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe61d;</i>
+							<span>医疗器械许可证</span>
+							<span>粤SZ10484</span>
+							</p>
+							<p class="z1-3">The company Has Medical Device License</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe606;</i><span>国内O2O配镜电商</span></p>
+							<p class="z1-3">The Best O2O Glasses Company In China</p>
+						</li>
+	
+					</ul>
+				</div>
+				<div class="z-2">
+					因可能存在系统缓存、页面更新导致价格变动异常等不确定性情况出现，如您发现活动商品标价或促销信息有异常，请您立即联系我们，以便我们及时补正。
+				</div>
+				<div class="z-3">
+					<p class="z3-1">
+						<span><i class="iconfont">&#xe607;</i> LOHO眼镜生活在全国已有实体体验店<span class="z3-1-1">236</span>家</span>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span><i class="iconfont">&#xe637;</i> 客服电话：<span class="z3-1-2">400-887-1920</span> <span class="z3-1-3">09:00-23:00(周一至周日)</span></span>
+					</p>
+					<div class="z3-2">
+						<ul>
+							<li><a href="#">关于LOHO</a></li>
+							<li><a href="#">公司简介</a></li>
+							<li><a href="#">媒体报道</a></li>
+							<li><a href="#">诚聘英才</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">新手指南</a></li>
+							<li><a href="#">会员特权</a></li>
+							<li><a href="#">购物流程</a></li>
+							<li><a href="#">常见问题</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">配眼镜指南</a></li>
+							<li><a href="#">读懂验光单</a></li>
+							<li><a href="#">镜架保养</a></li>
+							<li><a href="#">度数换算</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">配送与支付</a></li>
+							<li><a href="#">发票抬头</a></li>
+							<li><a href="#">配送时效</a></li>
+							<li><a href="#">支付方式</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">服务保证</a></li>
+							<li><a href="#">三包细则</a></li>
+							<li><a href="#">申请退款</a></li>
+							<li><a href="#">发票说明</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">联系我们</a></li>
+							<li><a href="#">客服中心</a></li>
+							<li><a href="#">免责声明</a></li>
+							<li><a href="#">投诉与建议</a></li>
+						</ul>
+						<ul class="z3-2-1">
+							<li class="z3-2-2" style="height: 100px;width: 100px; background: #fff;">
+								<img style="width: 90px; height: 90px; margin: 5px;" src="{% static 'img/QRcode.png' %}" />
+							</li>
+							<li class="z3-2-3">关注LOHO官方微信</li>
+						</ul>
+					</div>
+				</div>
+				<div class="z-4">
+					<ul class="z4-1">
+						<li><a href="#">友情链接:</a></li>
+						<li><a href="#">白酒招商</a></li>
+						<li><a href="#">53货源网</a></li>
+						<li><a href="#">食品招商</a></li>
+						<li><a href="#">珠宝加盟</a></li>
+						<li><a href="#">DR戒指</a></li>
+						<li><a href="#">日本代购</a></li>
+						<li><a href="#">女装批发</a></li>
+						<li><a href="#">音平商城</a></li>
+						<li><a href="#">结婚钻戒</a></li>
+						<li><a href="#">欧宝丽珠宝</a></li>
+						<li><a href="#">返利网</a></li>
+						<li><a href="#">淘狗网</a></li>
+						<li><a href="#">缅甸翡翠</a></li>
+						<li><a href="#">网上购物</a></li>
+						<li><a href="#">特步休闲鞋</a></li>
+						<li><a href="#">村安商城</a></li>
+						<li><a href="#">创业开店</a></li>
+						<li><a href="#">钻石</a></li>
+						<li><a href="#">海外代购</a></li>
+						<li><a href="#">鲜花网</a></li>
+						<li><a href="#">优品惠官方网站</a></li>
+						<li><a href="#">车发发</a></li>
+						<li><a href="#">牌子网</a></li>
+						<li><a href="#">中国眼镜网</a></li>
+						<li><a href="#">批发网</a></li>
+						<li><a href="#">申请友情链接</a></li>
+					
+					</ul>
+				</div>
+				<div class="z-5">
+					<p class="z5-1">
+						<img style="width: 52px; height: 55px;" src="{% static 'img/loho_87.jpg' %}" />
+						<img style="width: 46px; height: 55px;" src="{% static 'img/loho_88.jpg' %}" />
+						<img style="width: 56px; height: 55px;" src="{% static 'img/loho_89.jpg' %}" />
+						<img style="width: 94px; height: 55px;" src="{% static 'img/loho_90.jpg' %}" />
+						<img style="width: 93px; height: 55px;" src="{% static 'img/loho_92.jpg' %}" />
+					</p>
+					<p class="z5-2"><span>ICP备案证书号</span><span>:粤ICP备11106081号</span></p>
+					<p class="z5-2">© 2005-2017 深圳市乐活电子商务有限公司-时尚眼镜品牌 版权所有，并保留所有权利。</p>
+					<p class="z5-2">公司地址：深圳市福田区彩田路彩虹新都彩虹大厦29B</p>
+				</div>
+				<div class="z-6">
+					网站地图 友情链接 ERP系统
+				</div>
+				
+			</div>
+
+		</div>
+	</body>
+</html>

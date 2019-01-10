@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>post请求测试</title>
+</head>
+<body>
+
+<form action="{% url 'mt:posttest' %}" method="post">
+    {% csrf_token %}
+    <p>
+        账号: <input type="text" name="user">
+    </p>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, 
+form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+ul li{
+	list-style: none; text-decoration: none;
+}
+body{
+	font-size: 12px; width: 100%;
+}
+a{
+	text-decoration: none;
+}
+
+.clearfix:after{content:"."; display:block; height:0; 
+	clear:both; font-size: 0; overflow: hidden; visibility: hidden; 
+}
+#hd{
+	padding-top: 10px; 
+}
+
+.tp{
+	width: 1190px; height: 28px; margin: 0 auto; background: #fff;
+}
+.tp a{
+	text-decoration: none; color: black;
+}
+.tp1{
+	float:left; line-height: 28px;
+}
+.tp1 li{
+	float: left; margin-left: 5px; 
+}
+.tp2{
+	float:right; line-height: 28px;
+}
+.tp2 li{
+	float: left; margin-left: 5px; 
+}
+.tp2 .img1{
+	width: 12px; height: 12px;
+}
+.tp2 .img2{
+	width: 12px; height: 12px;
+}
+.tp2 .tp-1{
+	width: 160px; height: 26px; border: 1px solid red;
+}
+.tp2 .tp-2{
+	width: 48px; height: 28px; background: red; color: #fff; border: none;
+}
+
+.td{
+	width: 1190px; height: 107px; background: #fff; margin: 0 auto;
+}
+.td1{
+	float: left; position: relative; top: 50px;
+}
+.td1 a{
+	text-decoration: none;
+}
+.td-1{
+	float: left; font-size: 16px; font-weight: bolder;
+}
+.td-2{
+	float: left; margin: 0 5px;
+}
+.td-2 a{
+	color: black; line-height: 23px;
+}
+.td-3{
+	float: left; background: red; padding: 3px;
+}
+.td-3 a{
+	color: #fff; font-weight: bolder;
+}
+.td2{
+	float: left; margin-left: 320px;
+}
+.td3{
+	float: right;
+}
+
+.tb{
+	width: 100%; background: #000; 
+}
+.nav{
+	width: 1190px; height: 40px; background: #000; margin: 0 auto; position: relative;
+}
+.nav-1{
+	float: left;
+}
+.nav-1 > li{
+	float: left; width: 96px; height: 40px; text-align: center;
+}
+.nav-1 li > a{
+	color: #fff; line-height: 40px;
+	font-size: 16px; text-decoration: none;
+}
+.nav-2{
+	float: right; height: 40px;
+}
+.nav-2 a{
+	color: #fff; line-height: 40px;
+	font-size: 16px; text-decoration: none;
+}
+.img3{
+	width: 36px; height: 20px; color: #fff; padding-left: 10px;
+}
+.g-2{
+	padding: 0 50px 0 10px; 
+}
+
+/*下拉菜单   公用部分   开始*/
+.gy{
+	width: 760px; background: #fff; position: absolute; left: 195px; top: 40px;
+	background: #fff; z-index: 2; opacity: 0.9; display: none;
+}
+.nav1-1:hover .gy{
+	display: block;
+}
+.gy-1{
+	width: 450px; float: left;
+}
+.gy2-1{
+	width: 450px;  margin:0 20px; display: inline-block; border-bottom: 1px dashed black;
+}
+.nk-10{
+	float: left; width: 40px; height: 40px; line-height: 40px;
+}
+.nk-11{
+	float: right; width: 400px; 
+}
+.nk-11 li{
+	float: left; margin-left: 10px;
+}
+.nk-11 li a{
+	color: #333;
+}
+.gy-2{
+	float: right; margin: 10px 50px 0 0px;
+}
+/*结束*/
+.nav1-2:hover .gy{
+	display: block;
+}
+.nav1-3:hover .gy{
+	display: block;
+}
+.nav1-4:hover .gy{
+	display: block;
+}
+.nav1-5:hover .gy{
+	display: block;
+}
+.nav1-6:hover .gy{
+	display: block;
+}
+.nav1-7:hover .gy{
+	display: block;
+}
+
+
+.m-1{
+	width: 1190px; background: #fff; margin: 5px auto; 
+}
+.m-1 a{
+	color: black;
+}
+
+.k-1{
+	width: 100%; background: #fff;
+}
+.k1-2{
+	width: 1190px; height: 753px; border-top: 1px solid gray; margin: 0 auto;
+}
+.k2-1{
+	width: 705px; height: 709px; float: left; position: relative;
+}
+.k2-1-1{
+	width: 705; height: 237px; position: relative; margin-top: 50px; margin-left: 50px;
+}
+.k211-1{
+	width: 100px; height: 100px; background: #666; position: absolute; left: 10px; top: 10px;
+}
+.k2-2{
+	width: 465px; height: 709px; float: right; background: #f5f5f5;
+}
+.k2-2-1{
+	width: 381px; padding-top: 14px; margin: 0 auto; font: 700 16px/1.5;
+}
+.k2-2-2{
+	width: 381px; padding-top: 8px; margin: 0 auto;
+}
+.a-1{
+	
+}
+.a-1 li{
+	margin-bottom: 20px;
+}
+.a1-1{
+	font-size: 30px; color: red;
+}
+.a1-2{
+	float: left; display: block; margin-right: 20px;
+}
+.a1-3{
+	padding: 5px; background: gray; color: black;
+}
+.a1-4{
+	width: 50px; height: 22px; text-align: center;
+}
+.a1-5{
+	display: inline-block; width: 100px; height: 20px; border: 1px solid red;
+	text-align: center; color: red; line-height: 20px;
+}
+.b-1{
+	padding: 28px 0;
+}
+.b1-1,.b1-2{
+	float: left; width: 182px; height: 42px; text-align: center; line-height: 42px;
+	font-size: 17px;
+}
+.b1-1{
+	border: 1px solid red; margin-right: 10px; cursor: pointer;
+}
+.b1-1 a{
+	color: red;
+}
+.b1-2{
+	 background: red; color: #fff;
+}
+
+.k2-2-3{
+	width: 381px; margin: 0 auto;
+}
+.k2-2-3 p{
+	margin-bottom: 10px;
+}
+
+.k2-1-2{
+	width: 500px; height: 300px; position: absolute; left: 705px; top: 50px;
+	overflow: hidden; background: #fff; display: none; z-index: 3;
+}
+.k212-1{
+	padding: 50px 100px;
+}
+.k212-1 li{
+	float: left; 
+}
+.k2-1-3{
+	width: 705px; height: 180px;
+}
+.k2-1-4{
+	width: 705px; height: 220px; background: #f5f5f5;
+}
+.k214-1{
+	float: left; width: 220px; height: 205px; padding: 30px 20px 0px 40px;
+}
+.k214-2{
+	float: left; padding-top: 30px;
+}
+.k214-2 p{
+	line-height: 30px;
+}
+
+.k1-3{
+	width: 1190px; height: 150px; border-top: 1px solid black; margin: 0 auto;
+}
+.k13-1{
+	width: 1190px; height: 40px; background: #f5f5f5;
+}
+.k13-1 li{
+	float: left; width: 91px; height: 40px; line-height: 40px; text-align: center;
+}
+.k13-1 li a{
+	font-weight: 700px; color: black;
+}
+.k13-2{
+	width: 1190px; height: 86px; border: 1px solid black; margin-top: 7px;
+}
+.k132-1{
+	margin: 6px 0 0 10px;
+}
+.k132-1 li{
+	float: left; width: 160px; height: 28px; 
+}
+
+.k1-4{
+	text-align: center;
+}
+
+/*底部*/
+.box11{
+	width: 1190px; height: 248px; margin: 0 auto; margin-top: 20px; 
+}
+.o-1{
+	float: left; width: 287px; height: 248px; border: 1px solid gray; overflow: hidden;
+}
+.o1-1 dl{
+	border-bottom: 1px dashed #ddd; list-style: none; width: 225px; margin-left: 20px;
+}
+.o1-1 dl dt{
+	float: left; width: 50px; height: 28px; display: block;
+}
+.o1-1 dl dd{
+	float: right; width: 170px; height: 28px; display: block;
+}
+.o1-1 dl a{
+	color: #4D4D4D;
+}
+.o-2{
+	float: left; width: 591px; height: 248px; border: 1px solid gray; margin: 0 5px;
+}
+.o-3{
+	float: right; width: 296px; height: 248px; border: 1px solid gray;
+}
+.o3-1{
+	width: 296px; height: 138px; padding-top: 20px;
+}
+.o3-1 li{
+	float: left; width: 50%; height: 69px; text-align: center; 
+}
+.o3-1 li a{
+	color: black; font-size: 14px;
+}
+.o4-1{
+	width: 210px; height: 60px; background: red; border-radius: 5px; font-size: 20px;
+	color: #fff; text-align: center; padding-top: 10px; margin-left: 40px;
+}
+
+/*公用部分*/
+.box12{
+	width: 1190px; margin: 0 auto; margin-top: 20px; 
+}
+.z-1{
+	width: 1190px; height: 193px; background: #efefef; overflow: hidden;
+}
+.z1-1{
+	width: 1174px; height: 150px; display: block; margin: 35px 10px 10px 10px;
+}
+.z1-1 li{
+	float: left; width: 24%; height: 62px; background: #fff; margin: 5px;
+	text-align: center; 
+}
+.z1-2{
+	height: 40px; width: 281px; line-height: 40px; font-size: 14px;
+}
+.z1-3{
+	height: 18px; width: 281px; line-height: 18px;
+}
+.z-2{
+	width: 1190px; height: 18px; padding-left: 15px;
+}
+.z-3{
+	width: 1190px; height: 290px; background: black;
+}
+.z3-1{
+	width: 1190px; height: 69px; color: #fff; line-height: 69px; padding-left: 20px;
+}
+.z3-1-1{
+	font-size: 16px; color: orange;
+}
+.z3-1-2{
+	color: orange;
+}
+.z3-1-3{
+	color: #999;
+}
+.z3-2{
+	width: 1190px; height: 221px; margin-top: 20px; overflow: hidden;
+}
+.z3-2 ul{
+	float: left; width: 150px; height: 221px; 
+}
+.z3-2 ul li{
+	line-height: 26px; margin-left: 40px;
+}
+.z3-2 ul li a{
+	color: #999;
+}
+.z3-2-1{
+	text-align: center; padding-left: 50px; padding-top: 20px;
+}
+.z3-2-2{
+	
+}
+.z3-2-3{
+	color: #fff;
+}
+.z-4{
+	width: 1190px; height: 44px;
+}
+.z4-1 li{
+	float: left; margin-right: 5px; line-height: 22px;
+}
+.z4-1 li a{
+	color: black;
+}
+.z-5{
+	width: 1190px; height: 118px; 
+}
+.z5-1{
+	text-align: center;
+}
+.z5-2{
+	text-align: center; font-size: 14px; color: #444;
+}
+.z-6{
+	width: 1190px; height: 22px; background: #555; text-align: center;
+	color: #fff; line-height: 22px;
+}

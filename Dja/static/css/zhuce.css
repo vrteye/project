@@ -1,0 +1,172 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, 
+form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+ul li{
+	list-style: none; text-decoration: none;
+}
+body{
+	font-size: 12px; width: 100%;
+}
+a{
+	text-decoration: none;
+}
+
+.clearfix:after{content:"."; display:block; height:0; 
+	clear:both; font-size: 0; overflow: hidden; visibility: hidden; 
+}
+
+.top{
+	width: 100%; 
+}
+.t-1{
+	width: 1190px; height: 18px; line-height: 18px; margin: 10px auto;
+	text-align: right; display: block; 
+}
+.t-1 a{
+	color: #06A;
+}
+.t-2{
+	margin: 0 auto; width: 1190px; height: 700px; 
+	border: 1px solid #808080; padding: 50px 0;
+}
+.f-1{
+	float: left; width: 600px; height: 629px; border-right: 1px dashed #ccc;
+	padding-left: 50px; 
+}
+.f1-1{
+	font-size: 18px; font-weight: 400;  display: block; width: 600px; height: 27px;
+	margin-bottom: 10px;
+}
+.f1-3{
+	margin-bottom: 10px; display: block;
+}	
+.f1-2{
+	line-height: 18px; font-weight: 700; height: 18px;
+}	
+.f1-2 dt{
+	margin-bottom: 5px; display: block; width: 600px; height: 18px;
+}
+.f1-2 dd{
+	margin-bottom: 20px; display: block;  height: 36px;
+}
+.f1-2 dd input{
+	width: 240px; height: 30px;
+}
+.f-2{
+	float: left; width: 500px; height: 208px; padding-top: 50px; 
+}
+.f2-1{
+	width: 500px; height: 34px;  text-align: center; margin-bottom: 40px;
+}
+.f2-1 .a1, .f2-2 .a2{
+	width: 102px; height: 32px;  float: left; line-height: 32px; font-size: 18px; text-align: center;
+}
+.f2-1 .a1{
+	background: red; color: #fff; 
+}
+.f2-2 .a2{
+	background: #eee; color: #06A;
+}
+.f2-2-1{
+	display: block; float: left; height: 32px; line-height: 32px; margin-left: 200px;
+}
+.list1 li{
+	float: left; background: #ccc; width: 82px; height: 20px; margin-right: 5px; 
+	color: #fff; text-align: center;
+}
+.m-1{
+	width: 250px; height: 32px; background: red; color: #fff; margin-top: 20px;
+}
+
+
+.box12{
+	width: 1190px; margin: 0 auto; margin-top: 20px; 
+}
+.z-1{
+	width: 1190px; height: 193px; background: #efefef; overflow: hidden;
+}
+.z1-1{
+	width: 1174px; height: 150px; display: block; margin: 35px 10px 10px 10px;
+}
+.z1-1 li{
+	float: left; width: 24%; height: 62px; background: #fff; margin: 5px;
+	text-align: center; 
+}
+.z1-2{
+	height: 40px; width: 281px; line-height: 40px; font-size: 14px;
+}
+.z1-3{
+	height: 18px; width: 281px; line-height: 18px;
+}
+.z-2{
+	width: 1190px; height: 18px; padding-left: 15px;
+}
+.z-3{
+	width: 1190px; height: 290px; background: black;
+}
+.z3-1{
+	width: 1190px; height: 69px; color: #fff; line-height: 69px; padding-left: 20px;
+}
+.z3-1-1{
+	font-size: 16px; color: orange;
+}
+.z3-1-2{
+	color: orange;
+}
+.z3-1-3{
+	color: #999;
+}
+.z3-2{
+	width: 1190px; height: 221px; margin-top: 20px; overflow: hidden;
+}
+.z3-2 ul{
+	float: left; width: 150px; height: 221px; 
+}
+.z3-2 ul li{
+	line-height: 26px; margin-left: 40px;
+}
+.z3-2 ul li a{
+	color: #999;
+}
+.z3-2-1{
+	text-align: center; padding-left: 50px; padding-top: 20px;
+}
+.z3-2-2{
+	
+}
+.z3-2-3{
+	color: #fff;
+}
+.z-4{
+	width: 1190px; height: 44px;
+}
+.z4-1 li{
+	float: left; margin-right: 5px; line-height: 22px;
+}
+.z4-1 li a{
+	color: black;
+}
+.z-5{
+	width: 1190px; height: 118px; 
+}
+.z5-1{
+	text-align: center;
+}
+.z5-2{
+	text-align: center; font-size: 14px; color: #444;
+}
+.z-6{
+	width: 1190px; height: 22px; background: #555; text-align: center;
+	color: #fff; line-height: 22px;
+}
+
+
+
+
+
+
+
+
+

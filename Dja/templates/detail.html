@@ -1,0 +1,802 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="{% static 'js/jquery-1.12.3.js' %}"></script>
+		<script src="{% static 'js/jquery.cookie.js' %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'font/iconfont.css' %}"/>
+		<script src="{% static 'js/ajax.js' %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}"/>
+		<script src="{% static 'js/detail1.js' %}"></script>
+		<script src="{% static 'js/gouwucelidedongxi.js' %}"></script>
+		<script>
+			$(function(){
+				var count = gouwuce();
+				$(".nmb").html(count);
+			})
+		</script>
+	</head>
+	<body>
+		<div id="hd">
+			<div class="tp">
+				<ul class="tp1">
+					<li><a href="#">Hi~欢迎来到LOHO!</a></li>
+					<li><a href="#">[请登陆]</a></li>
+					<li><a href="zhuce.html">[注册]</a></li>
+					<li><a href="#">收藏LOHO</a></li>
+				</ul>
+				<ul class="tp2">
+					<li><a href="#">MY LOHO</a></li>
+					<li><a href="#">我的订单</a></li>
+					<li><a href="mycart.html"><img class="img1" src="{% static 'img/购物车.png' %}" />购物车(<span style="color: red;" class="nmb">0</span>)</a></li>
+					<li><a href="#">手机版</a></li>
+					<li><a href="#"><img class="img2" src="{% static 'img/电话.png' %}" />400-8871920 (09:00-23:00)</a></li>
+					<li><a href="#">
+						<input class="tp-1" type="text"/><button class="tp-2" type="submit">搜索</button>
+					</a></li>
+				</ul>
+			</div>
+			
+			<div class="td">
+				<div class="td1">
+					<div class="td-1">深圳站</div>
+					<div class="td-2"><a href="#">(切换城市)</a></div>
+					<div class="td-3"><a href="#">m 查看店铺</a></div>
+				</div>
+				<div class="td2">
+					<div class="td-4"><a href="index.html"><img src="{% static 'img/logo.png' %}"></a></div>
+				</div>
+				<div class="td3">
+					<div class="td-5"><a href="#"><img src="{% static 'img/1465203303405363.jpg' %}"/></a></div>
+				</div>
+			</div>
+			
+			<div class="tb">
+				<div class="nav">
+					<ul class="nav-1">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="#">新品上市</a></li>
+						<li class="nav1-1"><a href="#">
+							男款眼镜
+						<!--公用部分	-->
+							<div class="gy">
+								<div class="gy-1">
+									<div class="gy2-1 .clearfix">
+										<h3 class="nk-10">系列</h3>
+										<ul class="nk-11">	
+											<li><a href="#">Mori</a></li>
+											<li><a href="#">Divided</a></li>
+											<li><a href="#">Black</a></li>
+											<li><a href="#">Basic</a></li>
+											<li><a href="#">Retro</a></li>
+											<li><a href="#">Horm</a></li>
+											<li><a href="#">fibre</a></li>
+											<li><a href="#">Alpha</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">材质</h3>
+										<ul class="nk-11">
+											<li><a href="#">板材</a></li>
+											<li><a href="#">金属</a></li>
+											<li><a href="#">TR</a></li>
+											<li><a href="#">塑钢</a></li>
+											<li><a href="#">碳纤维</a></li>
+											<li><a href="#">钛架</a></li>
+											<li><a href="#">聚合物</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">大小</h3>
+										<ul class="nk-11">
+											<li><a href="#">小框</a></li>
+											<li><a href="#">中框</a></li>
+											<li><a href="#">大框</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">颜色</h3>
+										<ul class="nk-11">
+											<li><a href="#">黑色</a></li>
+											<li><a href="#">咖啡色</a></li>
+											<li><a href="#">绿色</a></li>
+											<li><a href="#">蓝色</a></li>
+											<li><a href="#">紫色</a></li>
+											<li><a href="#">红色</a></li>
+											<li><a href="#">金色</a></li>
+											<li><a href="#">玳瑁色</a></li>
+											<li><a href="#">灰色</a></li>
+											<li><a href="#">黑白色系</a></li>
+											<li><a href="#">彩色系</a></li>
+											<li><a href="#">花纹系</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1" style="border: none;">
+										<h3 class="nk-10">品牌</h3>
+										<ul class="nk-11">
+											<li><a href="#">HOLO</a></li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="gy-2"><img src="{% static 'img/1502040870370642015.jpg' %}"/></div>
+							</div>
+						<!--结束	-->
+						</a></li>
+						<li class="nav1-2"><a href="#">
+							女款眼镜
+							<div class="gy">
+								<div class="gy-1">
+									<div class="gy2-1 .clearfix">
+										<h3 class="nk-10">系列</h3>
+										<ul class="nk-11">	
+											<li><a href="#">Mori</a></li>
+											<li><a href="#">Divided</a></li>
+											<li><a href="#">Black</a></li>
+											<li><a href="#">Basic</a></li>
+											<li><a href="#">Retro</a></li>
+											<li><a href="#">Horm</a></li>
+											<li><a href="#">fibre</a></li>
+											<li><a href="#">Alpha</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">材质</h3>
+										<ul class="nk-11">
+											<li><a href="#">板材</a></li>
+											<li><a href="#">金属</a></li>
+											<li><a href="#">TR</a></li>
+											<li><a href="#">塑钢</a></li>
+											<li><a href="#">碳纤维</a></li>
+											<li><a href="#">钛架</a></li>
+											<li><a href="#">聚合物</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">大小</h3>
+										<ul class="nk-11">
+											<li><a href="#">小框</a></li>
+											<li><a href="#">中框</a></li>
+											<li><a href="#">大框</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">颜色</h3>
+										<ul class="nk-11">
+											<li><a href="#">黑色</a></li>
+											<li><a href="#">咖啡色</a></li>
+											<li><a href="#">绿色</a></li>
+											<li><a href="#">蓝色</a></li>
+											<li><a href="#">紫色</a></li>
+											<li><a href="#">红色</a></li>
+											<li><a href="#">金色</a></li>
+											<li><a href="#">玳瑁色</a></li>
+											<li><a href="#">灰色</a></li>
+											<li><a href="#">黑白色系</a></li>
+											<li><a href="#">彩色系</a></li>
+											<li><a href="#">花纹系</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1" style="border: none;">
+										<h3 class="nk-10">品牌</h3>
+										<ul class="nk-11">
+											<li><a href="#">HOLO</a></li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="gy-2"><img src="{% static 'img/1502040887409812332.jpg' %}"/></div>
+							</div>
+						</a></li>
+						<li class="nav1-3"><a href="#">
+							太阳眼镜
+							<div class="gy">
+								<div class="gy-1">
+
+									<div class="gy2-1">
+										<h3 class="nk-10">材质</h3>
+										<ul class="nk-11">
+											<li><a href="#">板材</a></li>
+											<li><a href="#">金属</a></li>
+											<li><a href="#">TR</a></li>
+											<li><a href="#">塑钢</a></li>
+											<li><a href="#">碳纤维</a></li>
+											<li><a href="#">钛架</a></li>
+											<li><a href="#">聚合物</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">大小</h3>
+										<ul class="nk-11">
+											<li><a href="#">小框</a></li>
+											<li><a href="#">中框</a></li>
+											<li><a href="#">大框</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">框型</h3>
+										<ul class="nk-11">
+											<li><a href="#">椭圆型</a></li>
+											<li><a href="#">圆型</a></li>
+											<li><a href="#">方型</a></li>	
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1" style="border: none;">
+										<h3 class="nk-10">价格</h3>
+										<ul class="nk-11">
+											<li><a href="#">101~200</a></li>
+											<li><a href="#">201~400</a></li>
+											<li><a href="#">401~700</a></li>
+											<li><a href="#">701~100</a></li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="gy-2"><img src="{% static 'img/1502040899243918946.jpg' %}"/></div>
+							</div>
+						</a></li>
+						<li class="nav1-4"><a href="#">
+							儿童眼镜
+							<div class="gy">
+								<div class="gy-1">
+
+									<div class="gy2-1">
+										<h3 class="nk-10">功能</h3>
+										<ul class="nk-11">
+											<li><a href="#">儿童光学镜</a></li>
+											<li><a href="#">儿童太阳镜</a></li>
+										</ul>
+									</div>
+								
+								</div>
+								
+								<div class="gy-2"><img src="{% static 'img/1500920532158062555.jpg' %}"/></div>
+							</div>
+						</a></li>
+						<li class="nav1-5"><a href="#">
+							功能眼镜
+							<div class="gy">
+								<div class="gy-1">
+
+									<div class="gy2-1">
+										<h3 class="nk-10">功能</h3>
+										<ul class="nk-11">
+											<li><a href="#">骑行镜</a></li>
+											<li><a href="#">老花镜</a></li>
+											<li><a href="#">成人防辐射镜</a></li>
+											
+										</ul>
+									</div>
+									
+								</div>
+								
+								<div class="gy-2"><img src="{% static 'img/1500920498733152832.jpg' %}"/></div>
+							</div>
+						</a></li>
+						<li class="nav1-6"><a href="#">
+							品牌眼镜
+							<div class="gy">
+								<div class="gy-1">
+
+									<div class="gy2-1">
+										<h3 class="nk-10">品牌</h3>
+										<ul class="nk-11">
+											<li><a href="#">LOHO</a></li>
+											<li><a href="#">ZEISS/蔡司</a></li>
+											<li><a href="#">Essilor依视路</a></li>
+											
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">折射率</h3>
+										<ul class="nk-11">
+											<li><a href="#">1.50</a></li>
+											<li><a href="#">1.56</a></li>
+											<li><a href="#">1.61</a></li>
+											<li><a href="#">1.67</a></li>
+											<li><a href="#">1.74</a></li>
+											<li><a href="#">1.80</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">度数</h3>
+										<ul class="nk-11">
+											<li><a href="#">0~200度</a></li>
+											<li><a href="#">0~600度</a></li>
+											<li><a href="#">200~400度</a></li>
+											<li><a href="#">400~600度</a></li>
+											<li><a href="#">600度以上</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1" style="border: none;">
+										<h3 class="nk-10">类型</h3>
+										<ul class="nk-11">
+											<li><a href="#">单光片</a></li>
+											<li><a href="#">渐进多焦点镜片</a></li>
+											<li><a href="#">染色镜片</a></li>
+											<li><a href="#">变色镜片</a></li>
+											<li><a href="#">抗疲劳镜片</a></li>
+											<li><a href="#">防辐射镜片</a></li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="gy-2"><img style="width: 210px; height: 210px;" src="{% static 'img/1482803949414410.jpg' %}"/></div>
+							</div>
+						</a></li>
+						<li class="nav1-7"><a href="#">
+							美瞳/隐形</a>
+							<div class="gy">
+								<div class="gy-1">
+
+									<div class="gy2-1">
+										<h3 class="nk-10">商品分类：</h3>
+										<ul class="nk-11">
+											<li><a href="#">透明隐形眼镜</a></li>
+											<li><a href="#">彩色隐形眼镜</a></li>
+											<li><a href="#">护理用品</a></li>
+										
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">品牌</h3>
+										<ul class="nk-11">
+											<li><a href="#">博士伦</a></li>
+											<li><a href="#">沙福隆</a></li>
+											<li><a href="#">爱尔康</a></li>
+											<li><a href="#">凯达</a></li>
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">价格</h3>
+										<ul class="nk-11">
+											<li><a href="#"><49元</a></li>
+											<li><a href="#">50~99元</a></li>
+											
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1">
+										<h3 class="nk-10">功能</h3>
+										<ul class="nk-11">
+											<li><a href="#">护理液</a></li>
+											<li><a href="#">润眼液</a></li>
+											<li><a href="#">护理配件</a></li>
+											
+										</ul>
+									</div>
+									<br />
+									<div class="gy2-1" style="border: none;">
+										<h3 class="nk-10">规格</h3>
+										<ul class="nk-11">
+											<li><a href="#">促销装</a></li>
+											<li><a href="#">大瓶装(500ML)</a></li>
+											<li><a href="#">中瓶装(≥250ML)</a></li>
+											<li><a href="#">小瓶装(≤240ML)</a></li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="gy-2"><img src="{% static 'img/1507482991013830024.jpg' %}"/></div>
+							</div>
+						</li>
+					</ul>
+					<div class="nav-2" style="background: red;">
+						<a href="#">
+							<img class="img3" src="{% static 'img/影院信息-3D眼镜.png' %}" />
+							<span class="g-2">LOHO线下体验店</span>
+						</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+		
+		
+		<div class="m-1">
+			<a href="#">首页></a>
+			<a href="#">眼镜></a>
+			<a href="#">男款眼镜></a>
+			 LOHO 光学镜架 金属 枪色金属+玳瑁色板材 复古款 GX9034-C2
+		</div>
+		
+		<div class="k-1">
+			<div class="k1-2">
+				<div class="k2-1">
+					<div class="k2-1-1">
+						<!--<img class="img1" style="width: 600px; height: 237px;" src="img/detail img/G_1479874651263638870.jpg" />-->
+						<div style="display: none;" class="k211-1"></div>
+					</div>
+					<div class="k2-1-2">
+						<!--<img class="img3" style=" position: relative; left: 0; top: 0; width: 900px; height: 600px;" src="img/detail img/G_1479874651263638870.jpg" />--> 
+					</div>
+					<div class="k2-1-3">
+						<ul class="k212-1">
+							<!--<li><img style="width: 162px; height: 65px;" src="img/detail img/G_1479874651263638870.jpg"</li>
+							<li><img style="width: 162px; height: 65px;" src="img/detail img/G_1480468559080233329.jpg"</li>
+							<li><img style="width: 162px; height: 65px;" src="img/detail img/G_1480560734221768497.jpg"</li>-->
+						</ul>
+					</div>
+					<div class="k2-1-4">
+						<div class="k214-1">
+							<img src="{% static 'img/detail img/lohostore.jpg' %}" />
+						</div>
+						<div class="k214-2">
+							<h3>体验店地址:</h3>
+							<p>您可以到全国(239)家体验店免费验光 查看地图</p>
+							<p>
+								<span class="k214-2-1"></span>
+								<span class="k214-2-1"></span>
+								<span class="k214-2-1"></span>
+								<span class="k214-2-1"></span>
+								<span class="k214-2-1"></span>
+								<span class="k214-2-1"></span>
+							</p>
+							<p>免费发送地址到手机</p>
+						</div>
+					</div>
+				</div>
+				<div class="k2-2">
+					<div class="k2-2-1">
+						<!--<h2>LOHO 光学镜架 金属 枪色金属+玳瑁色板材 复古款 GX9034-C2</h2>-->
+					</div>
+					<div class="k2-2-2">
+						<ul class="a-1">
+							<!--<li><span>LOHO价：</span><span class="a1-1">￥ 599</span></li>-->
+							<li>已售：150 副销售详情用户评价：(已有7人评价)</li>
+							<li class="clearfix">
+								<span class="a1-2">颜色</span>
+								<span class="a1-2">
+									<img style="width: 76px; height: 31px;" src="{% static 'img/detail img/G_1479874825882712598.jpg' %}" />
+									<br />
+									枪色
+								</span>
+								<span class="a1-2">
+									<img style="width: 76px; height: 31px;" src="{% static 'img/detail img/G_1479874651263638870.jpg' %}" />
+									<br />
+									铜色金属+玳
+									<br/>
+									&nbsp; &nbsp; 瑁色板材
+								</span>
+							</li>
+							<li>
+								<span>数量</span>
+								<a class="a1-3" href="#">-</a>
+								<input class="a1-4" type="number" value="1"/>
+								<a class="a1-3" href="#">+</a>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<span class="a1-5">在线咨询</span>
+							</li>
+						</ul>
+						<div class="b-1 clearfix">
+							<div class="b1-1">
+								<a class="b11-1">
+									<i style="font-size: 26px;" class="iconfont">&#xe611;</i>
+									点击购买
+								</a>
+							</div>
+							<div class="b1-2">♥ 免费预约直营店验光</div>
+						</div>
+					</div>
+					
+					<div class="k2-2-3">
+						<p>PROMISE/服务承诺：</p>
+						<p>01.线上线下同价&nbsp;&nbsp;&nbsp; 02.免费港式验光&nbsp;&nbsp;&nbsp; 03.7天退换</p>
+						<p>04.终身免费保养</p>
+						<p>本款产品在全国239家连锁店均有销售</p>
+						<p>
+							<i class="iconfont"></i>分享
+							<i class="iconfont"></i>收藏商品
+						</p>
+					</div>
+				</div>
+			</div>
+		
+		<!--弹出框  开始-->
+			<div class="tck" style="width: 500px; height: 200px; position: fixed; left: 30%; top: 30%; background: #fff; display: none;">
+				<div style="width: 500px; height: 50px; background: #D3D3D3; ">
+					<span style="font-size: 24px; padding-left: 20px;">提示</span> 
+					<a href="#"><i style="font-size: 34px; margin-left: 380px; color: black;" class="iconfont">&#xe601;</i></a>
+				</div>
+				<div style="width: 500px; height: 100px; font-size: 20px; padding-left: 20px; line-height: 100px; border-bottom: 1px solid black;">
+					您购买的商品已添加到购物车，要去看看？
+				</div>
+				<div style="width: 500px; height: 50px; line-height: 300px; text-align: center; line-height: 30px;">
+					<a href="mycart.html"><span style="width: 80px; height: 30px; margin-top: 10px; background: orange; display: inline-block; color: #fff;">确定</span></a>
+					<span style="width: 80px; height: 30px; margin-top: 10px; background: greenyellow; display: inline-block; color: #fff;">取消</span>
+				</div>
+			</div>
+		<!--结束-->
+		
+			<div class="k1-3">
+				<ul class="k13-1">
+					<li><a href="#">商品描述</a></li>
+					<li><a href="#">配镜指南</a></li>
+					<li><a href="#">用户评价(2)</a></li>
+					<li><a href="#">售后服务</a></li>
+					<li><a href="#">港式验光</a></li>
+					<li><a href="#">镜片加工</a></li>
+				</ul>
+				<div class="k13-2">
+					<ul class="k132-1">
+						<li>品牌：LOHO</li>
+						<li>条码：211301161229007</li>
+						<li> 规格：60□17 143</li>
+						<li>架高：52</li>
+						<li>鼻梁宽：17</li>
+						<li>镜架外宽：139</li>
+						<li>镜架宽：60</li>
+						<li>镜腿长：143</li>
+						<li>镜架内宽：137</li>
+						<li>材质：金属</li>
+						<li>边框：全框</li>
+						<li>大小：大框</li>
+						<li>框型：方型</li>
+						<li>价格：201-400</li>
+						<li>元色系: 碳黑色 </li>
+					</ul>
+				</div>
+			</div>
+			<div class="k1-4">
+				<img src="{% static 'img/detail img/1482561976216362.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561976401342.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561976510466.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561976546335.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561976657990.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561978247884.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561979350213.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561978247884.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561978927443.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561978597120.jpg' %}" />
+			</div>	
+		</div>
+		
+		<div class="box11">
+				<div class="o-1">
+					<div class="o1-1">
+						<dl>
+							<dt>深圳</dt>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">南山世界之窗店</a></dd>
+							<dd><a href="#">宝安海雅缤纷城店</a></dd>
+							<dd><a href="#">福田绿景佐阾虹湾店</a></dd>
+							<dd><a href="#">宝安壹方中心店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+						</dl>
+						<dl>
+							<dt>广州</dt>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">南山世界之窗店</a></dd>
+							<dd><a href="#">宝安海雅缤纷城店</a></dd>
+							<dd><a href="#">福田绿景佐阾虹湾店</a></dd>
+							<dd><a href="#">宝安壹方中心店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+						</dl>
+						<dl>
+							<dt>佛山</dt>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">南山世界之窗店</a></dd>
+							<dd><a href="#">宝安海雅缤纷城店</a></dd>
+							<dd><a href="#">福田绿景佐阾虹湾店</a></dd>
+							<dd><a href="#">宝安壹方中心店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+						</dl>
+						<dl>
+							<dt>东莞</dt>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">南山世界之窗店</a></dd>
+							<dd><a href="#">宝安海雅缤纷城店</a></dd>
+							<dd><a href="#">福田绿景佐阾虹湾店</a></dd>
+							<dd><a href="#">宝安壹方中心店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+							<dd><a href="#">怡景中心城店</a></dd>
+						</dl>
+					</div>		
+				</div>
+				<div class="o-2">
+					<img style="margin-left: 30px;" src="{% static 'img/1471511231313899.jpg' %}" />
+				</div>
+				<div class="o-3">
+					<ul class="o3-1">
+						<li><a href="#">
+							<span>+</span>
+							<span>查看实体店</span><br />
+							&nbsp;&nbsp;<span>View Store</span>
+						</a></li>
+						<li><a href="#">
+							<span>+</span>
+							<span>附近交通</span><br />
+							&nbsp;&nbsp;<span>Direction</span>
+						</a></li>
+						<li><a href="#">
+							<span>+</span>
+							<span>发送店地址到手机</span><br />
+							<span>Send To Mobile</span>
+						</a></li>
+						<li><a href="#">
+							<span>+</span>
+							<span>营业时间</span><br />
+							&nbsp;<span>Business  Hours</span>
+						</a></li>
+					</ul>
+					<div class="o3-2">
+						<p class="o4-1" >免费预约直营店验光<br/>BOOKING</p>
+					</div>
+				</div>	
+			</div>
+			
+			<div class="box12">
+				<div class="z-1">
+					<ul class="z1-1">
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe604;</i><span>线上线下同价</span></p>
+							<p class="z1-3">Online Single-Phase & Three-phase</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe615;</i><span>港式21步验光</span></p>
+							<p class="z1-3">Hong Kong Style Step 21 Optomety</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe607;</i><span>线上预约线下体验</span></p>
+							<p class="z1-3">Go Online Booking and Offline Experience</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe665;</i><span>全国连锁</span></p>
+							<p class="z1-3">Across The country Have Chain Stores</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe603;</i><span>MTC厂家直销</span></p>
+							<p class="z1-3">Mtc factory Direct Sales Of Products</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe62a;</i>
+							<span>互联网药品信息服务资格证书</span>
+							<!--<span>证号:（粤）经营性20150019</span>-->
+							</p>
+							<p class="z1-3">InternetDrugInformationServiceQualification</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe61d;</i>
+							<span>医疗器械许可证</span>
+							<span>粤SZ10484</span>
+							</p>
+							<p class="z1-3">The company Has Medical Device License</p>
+						</li>
+						<li>
+							<p class="z1-2"><i class="iconfont">&#xe606;</i><span>国内O2O配镜电商</span></p>
+							<p class="z1-3">The Best O2O Glasses Company In China</p>
+						</li>
+	
+					</ul>
+				</div>
+				<div class="z-2">
+					因可能存在系统缓存、页面更新导致价格变动异常等不确定性情况出现，如您发现活动商品标价或促销信息有异常，请您立即联系我们，以便我们及时补正。
+				</div>
+				<div class="z-3">
+					<p class="z3-1">
+						<span><i class="iconfont">&#xe607;</i> LOHO眼镜生活在全国已有实体体验店<span class="z3-1-1">236</span>家</span>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span><i class="iconfont">&#xe637;</i> 客服电话：<span class="z3-1-2">400-887-1920</span> <span class="z3-1-3">09:00-23:00(周一至周日)</span></span>
+					</p>
+					<div class="z3-2">
+						<ul>
+							<li><a href="#">关于LOHO</a></li>
+							<li><a href="#">公司简介</a></li>
+							<li><a href="#">媒体报道</a></li>
+							<li><a href="#">诚聘英才</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">新手指南</a></li>
+							<li><a href="#">会员特权</a></li>
+							<li><a href="#">购物流程</a></li>
+							<li><a href="#">常见问题</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">配眼镜指南</a></li>
+							<li><a href="#">读懂验光单</a></li>
+							<li><a href="#">镜架保养</a></li>
+							<li><a href="#">度数换算</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">配送与支付</a></li>
+							<li><a href="#">发票抬头</a></li>
+							<li><a href="#">配送时效</a></li>
+							<li><a href="#">支付方式</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">服务保证</a></li>
+							<li><a href="#">三包细则</a></li>
+							<li><a href="#">申请退款</a></li>
+							<li><a href="#">发票说明</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">联系我们</a></li>
+							<li><a href="#">客服中心</a></li>
+							<li><a href="#">免责声明</a></li>
+							<li><a href="#">投诉与建议</a></li>
+						</ul>
+						<ul class="z3-2-1">
+							<li class="z3-2-2" style="height: 100px;width: 100px; background: #fff;">
+								<img style="width: 90px; height: 90px; margin: 5px;" src="{% static 'img/QRcode.png' %}" />
+							</li>
+							<li class="z3-2-3">关注LOHO官方微信</li>
+						</ul>
+					</div>
+				</div>
+				<div class="z-4">
+					<ul class="z4-1">
+						<li><a href="#">友情链接:</a></li>
+						<li><a href="#">白酒招商</a></li>
+						<li><a href="#">53货源网</a></li>
+						<li><a href="#">食品招商</a></li>
+						<li><a href="#">珠宝加盟</a></li>
+						<li><a href="#">DR戒指</a></li>
+						<li><a href="#">日本代购</a></li>
+						<li><a href="#">女装批发</a></li>
+						<li><a href="#">音平商城</a></li>
+						<li><a href="#">结婚钻戒</a></li>
+						<li><a href="#">欧宝丽珠宝</a></li>
+						<li><a href="#">返利网</a></li>
+						<li><a href="#">淘狗网</a></li>
+						<li><a href="#">缅甸翡翠</a></li>
+						<li><a href="#">网上购物</a></li>
+						<li><a href="#">特步休闲鞋</a></li>
+						<li><a href="#">村安商城</a></li>
+						<li><a href="#">创业开店</a></li>
+						<li><a href="#">钻石</a></li>
+						<li><a href="#">海外代购</a></li>
+						<li><a href="#">鲜花网</a></li>
+						<li><a href="#">优品惠官方网站</a></li>
+						<li><a href="#">车发发</a></li>
+						<li><a href="#">牌子网</a></li>
+						<li><a href="#">中国眼镜网</a></li>
+						<li><a href="#">批发网</a></li>
+						<li><a href="#">申请友情链接</a></li>
+					
+					</ul>
+				</div>
+				<div class="z-5">
+					<p class="z5-1">
+						<img style="width: 52px; height: 55px;" src="{% static 'img/loho_87.jpg' %}" />
+						<img style="width: 46px; height: 55px;" src="{% static 'img/loho_88.jpg' %}" />
+						<img style="width: 56px; height: 55px;" src="{% static 'img/loho_89.jpg' %}" />
+						<img style="width: 94px; height: 55px;" src="{% static 'img/loho_90.jpg' %}" />
+						<img style="width: 93px; height: 55px;" src="{% static 'img/loho_92.jpg' %}" />
+					</p>
+					<p class="z5-2"><span>ICP备案证书号</span><span>:粤ICP备11106081号</span></p>
+					<p class="z5-2">© 2005-2017 深圳市乐活电子商务有限公司-时尚眼镜品牌 版权所有，并保留所有权利。</p>
+					<p class="z5-2">公司地址：深圳市福田区彩田路彩虹新都彩虹大厦29B</p>
+				</div>
+				<div class="z-6">
+					网站地图 友情链接 ERP系统
+				</div>
+				
+			</div>
+			
+			<img class="dingwei" style="position: absolute; right: 0; top:30%;" src="{% static 'img/dinwei.jpg' %}" />
+	</body>
+</html>
