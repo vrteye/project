@@ -173,9 +173,9 @@
 		<div class="t">
 			<div class="t-1">
 				您好，欢迎来到LOHO！  【     
-				<a href="#">登录</a>
+				<a href="{% url 'mt:denglu' %}">登录</a>
 				|
-				<a href="#">注册</a>
+				<a href="{% url 'mt:zhuce' %}">注册</a>
 				 】 | 
 				<a href="#">我的订单</a>|
 				<a href="#"><i class="iconfont">&#xe635;</i>购物车 <span style="color: red;" class="nmb">0</span></a>|
@@ -185,7 +185,7 @@
 		</div>
 		<div class="g">
 			<div class="g-1">
-				<div class="g1-1"><a href="index.html"><img src="{% static 'img/logo (1).png' %}"/></a></div>
+				<div class="g1-1"><a href="{% url 'mt:index' %}"><img src="{% static 'img/logo (1).png' %}"/></a></div>
 				<div class="g1-2">
 					<input class="g12-1" type="text" value="搜索商品" /><input class="g12-2" type="button" value="搜索" />
 				</div>
