@@ -5,44 +5,10 @@ from django.shortcuts import render, redirect
 # HttpRequest
 from LOHO.models import User
 
-
-# def index(request): # 默认第一个参数都是request
-#
-#     # 请求方法
-#     print(request.method)
-#
-#     # 请求路径
-#     print(request.path)
-#
-#     # GET请求 参数
-#     print(request.GET)
-#
-#     # POST请求 参数
-#     print(request.POST)
-#
-#     # COOKIES [会话技术]
-#     print(request.COOKIES)
-#
-#     # 文件
-#     print(request.FILES)
-#
-#     # session [会话技术]
-#     print(request.session)
-#
-#
-#     return render(request, 'index.html')
-
-
 def gettest(request):
-    # 如何获取 客户端 传递给 服务器的 参数?
-    # 参数在 request.GET   [类字典]
+
     print(request.GET)
 
-    # 方式一  [存在问题，如果不存在，会报错] 【不建议使用】
-    # print(request.GET['name'])
-    # print(request.GET['sex'])
-
-    # 方式二 [通过get方法获取，如果不存在，返回None，而且还可以设置默认值]
     print(request.GET.get('name'))
     print(request.GET.get('sex'))
     print(request.GET.get('haha', '你是开玩笑的吧?'))
@@ -140,8 +106,21 @@ def denglu(request):
     return render(request, 'denglu.html')
 
 
+
 def zhuce(request):
-    return render(request, 'zhuce.html')
+    if request.method == "GET":
+        return render(request, 'zhuce.html')
+    if request .method == "POST":
+        phone = request.POST['phone']
+        password = request.POST['password']
+        try:
+            user = User(phone=phone, password=password)
+            user.save()
+            status = 200  # 返回注册成功的编号
+        except:
+            status = 100  # 返回注册失败的编号
+        return JsonResponse({'status': status})
+    #
 
 
 def mycart(request):
@@ -150,3 +129,4 @@ def mycart(request):
 
 def detail(request):
     return render(request, 'detail.html')
+

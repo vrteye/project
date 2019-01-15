@@ -1,3 +1,27 @@
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+
+function getCookie(name) {
+  var cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = jQuery.trim(cookies[i]);
+      // Does this cookie string begin with the name we want?
+      if (cookie.substring(0, name.length + 1) === (name + '=')) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  };
+
+  return cookieValue;
+}
+
+
 $(function(){
 	
 	var yanzen1 = false;
@@ -64,35 +88,37 @@ $(function(){
 	}
 	
 	$(".m-1").click(function(){
-
 		cheched();
 		if(yanzen1==true && yanzen2==true && yanzen3==true && yanzen4==true){
-					
-			$.cookie("user", $(".f1-2-1").val(), {expires:30, path:"/"});
-		    $.cookie("password", $(".f1-2-3").val(), {expires:30, path:"/"});
 
-			//ajax
-			var xhr = new XMLHttpRequest();
-			xhr.open("post", "http://localhost/LOHO_glass/index/register.php", true);
-			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			var str = "user="+$(".f1-2-1").val()  + "&password="+$(".f1-2-3").val() ;
-			xhr.send(str);
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState==4 && xhr.status==200) {
-					//console.log(xhr.responseText);
-					var data = JSON.parse(xhr.responseText);
-					if(data.status==1){
-						//console.log("注册成功");
-						location.href = "denglu.html";
-					}
-					else{
-						alert(data.msg);
-					}
-					//json解析
-					//如果注册成功则进入登录页面
-					//如果失败则弹出提示信息
-				}
-			}
+		    var phone = $(".f1-2-1").val();
+			var password = $(".f1-2-3").val();
+
+			var csrftoken = getCookie('csrftoken');
+			 $.ajax({
+						type:"POST",
+						url: '/mt/zhuce/',
+						contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+						data: {
+							'phone':phone,
+							'password':password,
+						},
+						dataType: 'json',
+						beforeSend: function(xhr, settings) {
+							if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+							  xhr.setRequestHeader("X-CSRFToken", csrftoken);
+							}
+						},
+						success: function (result) {
+						 alert('成功');
+						 // var status = result['status']
+location .href='/mt/'
+						},
+						error: function () {
+						  alert('错误');
+						},
+					  })
+
 
 
 		}
