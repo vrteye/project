@@ -1,0 +1,33 @@
+.makt-div{
+    background-attachment: scroll;
+background-clip: border-box;
+background-color: rgb(102, 102, 102);
+background-image: none;
+background-origin: padding-box;
+background-size: auto;
+cursor: move;
+display: block;
+font-family: arial, "Hiragino Sans GB", "Microsoft YaHei", 宋体, sans-serif;
+font-size: 12px;
+font-stretch: normal;
+font-style: normal;
+font-variant-caps: normal;
+font-weight: normal;
+height: 100px;
+left: 500px;
+line-height: 18px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+opacity: 0.4000000059604645;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+position: absolute;
+text-align: center;
+top: 4px;
+width: 100px;
+z-index: 2;
+}
