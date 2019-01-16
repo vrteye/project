@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="{% static 'font/iconfont.css' %}" />
 		<script src="{% static 'js/jquery-1.12.3.js' %}"></script>
 		<script src="{% static 'js/ajax.js' %}"></script>
-		<script src="{% static 'js/shouye.js' %}" type=""></script>
+{#		<script src="{% static 'js/shouye.js' %}" type=""></script>#}
 		<script src="{% static 'js/jquery.cookie.js' %}"></script>
 		<script src="{% static 'js/gouwucelidedongxi.js' %}"></script>
         <script>
@@ -164,8 +164,17 @@ $(function(){
 			<div class="tp">
 				<ul class="tp1">
 					<li><a href="#">Hi~欢迎来到LOHO!</a></li>
-					<li><a href="{% url 'mt:denglu' %}">[请登陆]</a></li>
-					<li><a href="{% url 'mt:zhuce' %}">[注册]</a></li>
+				    {% if phone %}
+                    <li>
+                        用户名：{{ phone }}
+                    </li>
+                        <a href="{% url 'mt:logout' %}">退出</a>
+                    {% else %}
+                        <li>
+                            <li><a href="{% url 'mt:denglu' %}">[请登陆]</a></li>
+					        <li><a href="{% url 'mt:zhuce' %}">[注册]</a></li>
+                        </li>
+                    {% endif %}
 					<li><a href="#">收藏LOHO</a></li>
 				</ul>
 				<ul class="tp2">

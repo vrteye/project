@@ -8,7 +8,6 @@ from LOHO.models import User
 def gettest(request):
 
     print(request.GET)
-
     print(request.GET.get('name'))
     print(request.GET.get('sex'))
     print(request.GET.get('haha', '你是开玩笑的吧?'))
@@ -50,76 +49,83 @@ def index(request):
 
     # 你是谁?
     # 状态保持 [获取cookie]
-    username = request.COOKIES.get('username')
+    phone = request.COOKIES.get('phone')
+    print(phone)
 
-    return render(request, 'index.html', context={'username':username})
 
-def register(request):
+    return render(request, 'index.html', context={'phone':phone})
+
+def zhuce(request):
     if request.method == 'GET': # 获取注册页面
-        return render(request, 'register.html')
+        return render(request, 'zhuce.html')
     elif request.method == 'POST':  # 注册操作
         # 一定要检查，数据能从客户端传输到服务端
         # print(request.POST)
 
         # 将数据存储到数据库 (建模，迁移操作)
         user = User()
-        user.username = request.POST.get('username')
-        user.password = request.POST.get('password')
         user.phone = request.POST.get('phone')
+        user.password = request.POST.get('password')
+        # user.phone = request.POST.get('phone')
         user.save()
 
         # 状态保持 [设置cookie]
-        response = redirect('mt:index')
-        response.set_cookie('username', user.username)
+        status = 200
+        response = JsonResponse({'status': status})
+        response.set_cookie('phone', user.phone)
+
 
         return response
 
 def logout(request):
     response = redirect('mt:index')
-    response.delete_cookie('username')
+    response.delete_cookie('phone')
     return response
 
 
-def login(request):
+def denglu(request):
     if request.method == 'GET': # 获取登录页面
-        return render(request, 'login.html')
+        return render(request, 'denglu.html')
     elif request.method == 'POST':  # 登录操作
         # 一定要检查，数据能从客户端传输到服务端
-        # print(request.POST)
+        print(request.POST)
 
         # 和数据库中的数据对比，假如一致: 成功;   否则: 失败;
-        username = request.POST.get('username')
+        phone = request.POST.get('phone')
         password = request.POST.get('password')
 
-        users = User.objects.filter(username=username).filter(password=password)
+        users = User.objects.filter(phone=phone).filter(password=password)
         if users.count():   # 成功
             # 重定向到首页
             response = redirect('mt:index')
             # 状态保持 【设置cookie】
-            response.set_cookie('username', username, max_age=(60*60)*24*2)
+            response = redirect('mt:index')
+            response.set_cookie('phone', phone, max_age=(60*60)*24*2)
+
             return response
+
         else:   # 失败(用户名或密码错误)
-            return render(request, 'login.html', context={'err':'用户名或密码错误'})
+            return render(request, 'denglu.html', context={'err':'用户名或密码错误'})
 
 
-def denglu(request):
-    return render(request, 'denglu.html')
+# def denglu(request):
+#     return render(request, 'denglu.html')
 
 
 
-def zhuce(request):
-    if request.method == "GET":
-        return render(request, 'zhuce.html')
-    if request .method == "POST":
-        phone = request.POST['phone']
-        password = request.POST['password']
-        try:
-            user = User(phone=phone, password=password)
-            user.save()
-            status = 200  # 返回注册成功的编号
-        except:
-            status = 100  # 返回注册失败的编号
-        return JsonResponse({'status': status})
+# def zhuce(request):
+#     if request.method == "GET":
+#         return render(request, 'zhuce.html')
+#     if request .method == "POST":
+#         phone = request.POST['phone']
+#         password = request.POST['password']
+#         try:
+#             user = User(phone=phone, password=password)
+#             user.save()
+#             status = 200  # 返回注册成功的编号
+#         except:
+#             status = 100  # 返回注册失败的编号
+#         return JsonResponse({'status': status})
     #
 
 

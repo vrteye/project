@@ -23,7 +23,7 @@ function getCookie(name) {
 
 
 $(function(){
-	
+
 	var yanzen1 = false;
 	var yanzen2 = false;
 	var yanzen3 = false;
@@ -58,7 +58,7 @@ $(function(){
 			if(qiang.test($(this).val())){
 				$(".f1-2 span").eq(2).html("-密码强度为高级！");
 				$(".list1").children().css("background","green");
-			}	
+			}
 			yanzen2 = true;
 		}
 		else{
@@ -86,7 +86,7 @@ $(function(){
 			yanzen4 = false;
 		}
 	}
-	
+
 	$(".m-1").click(function(){
 		cheched();
 		if(yanzen1==true && yanzen2==true && yanzen3==true && yanzen4==true){
@@ -112,7 +112,7 @@ $(function(){
 						success: function (result) {
 						 alert('成功');
 						 // var status = result['status']
-location .href='/mt/'
+						location .href='/mt/'
 						},
 						error: function () {
 						  alert('错误');
@@ -127,12 +127,12 @@ location .href='/mt/'
 		}
 
 	})
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 })

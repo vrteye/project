@@ -18,7 +18,8 @@
 				<a href="#">帮助中心</a>
 			</div>
 			<div class="t-2">
-				<form class="f-1">
+				<form class="f-1" action="#" method="post">
+                    {% csrf_token %}
 					<h3 class="f1-1">请填写注册信息</h3>
 					<p class="f1-3">	
 						在门店购买过商品的用户可凭手机号码和门店分配的密码直接登录。<br />
@@ -26,11 +27,11 @@
 					</p>
 					<dl class="f1-2">
 						<dt>手机号</dt>
-						<dd><input class="f1-2-1" type="text" placeholder="请输入您的手机号" required /><span></span></dd>
+						<dd><input class="f1-2-1" name="phone" type="text" placeholder="请输入您的手机号" required /><span></span></dd>
 {#						<dt>邀请码</dt>#}
 {#						<dd><input class="f1-2-2" type="text" placeholder="邀请码" required /><span></span></dd>#}
 						<dt>密码</dt><span></span>
-						<dd><input class="f1-2-3" type="password" placeholder="请输入您的密码" required /><span></span></dd>
+						<dd><input class="f1-2-3" name="password" type="password" placeholder="请输入您的密码" required /><span></span></dd>
 						<dt>密码强度</dt>
 						<dd>
 							<ul class="list1">
