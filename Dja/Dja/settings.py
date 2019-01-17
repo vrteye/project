@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'Dja.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lilong',
+        'NAME': 'loho',
         'USER': 'root',
         'PASSWORD': 'yz1028959'
     }

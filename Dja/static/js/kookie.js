@@ -13,8 +13,7 @@ function setCookie(name, value, expires){
 //点语法.  , 内部有两个方法： get方法，set方法
 //document.cookie = str; ： 内部用的是set方法
 //console.log(document.cookie);  ： 内部用的是get方法
-	
-	
+
 }
 
 

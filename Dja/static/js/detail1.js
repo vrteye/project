@@ -60,9 +60,20 @@ $(function(){
 		}
 		return "";
 	}
-	
-	
-//放大镜	
+	// 加操作
+	$('.bt-wrapper .glyphicon glyphicon-minus').click(function () {
+		console.log('加操作')
+        }
+		
+	)
+	// 减操作
+	$('a1-3').click(function () {
+		console.log('减操作')
+        }
+
+	)
+//放大镜
+
 	$(".k2-1-1").mousemove(function(e){ 
 		
 		$(".k211-1").css("display","block");

@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}"/>
 		<script src="{% static 'js/detail1.js' %}"></script>
 		<script src="{% static 'js/gouwucelidedongxi.js' %}"></script>
+
 		<script>
 			$(function(){
 				var count = gouwuce();
@@ -461,7 +462,8 @@
 					</div>
 					<div class="k2-2-2">
 						<ul class="a-1">
-							<li><span>LOHO价：</span><span class="a1-1">￥ 591</span></li>
+
+							<li><span>LOHO价：</span><span class="a1-1">￥ <em>591</em></span></li>
 							<li>已售：150 副销售详情用户评价：(已有7人评价)</li>
 							<li class="clearfix">
 								<span class="a1-2">颜色</span>
@@ -480,9 +482,20 @@
 							</li>
 							<li>
 								<span>数量</span>
-								<a class="a1-3" href="#">-</a>
-								<input class="a1-4" type="number" value="1"/>
-								<a class="a1-3" href="#">+</a>
+                                <div class="bt-wrapper">
+                            <span class="glyphicon glyphicon-minus" goodsid="{{ goods.id }}"></span>
+                            <span class="num">
+                                {% for cart in carts %}
+                                    {% if cart.goods.id == goods.id %}
+                                        {{ cart.number }}
+                                    {% endif %}
+                                {% endfor %}
+                            </span>
+                             <span class="glyphicon glyphicon-plus" goodsid="{{ goods.id }}"></span>
+                        </div>
+{#								<a class="a1-3" href="#">-</a>#}
+{#								<input class="a1-4" type="number" value="1"/>#}
+{#								<a class="a1-3" href="#">+</a>#}
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<span class="a1-5">在线咨询</span>
 							</li>
@@ -497,7 +510,7 @@
 							<div class="b1-2">♥ 免费预约直营店验光</div>
 						</div>
 					</div>
-					
+
 					<div class="k2-2-3">
 						<p>PROMISE/服务承诺：</p>
 						<p>01.线上线下同价&nbsp;&nbsp;&nbsp; 02.免费港式验光&nbsp;&nbsp;&nbsp; 03.7天退换</p>
@@ -510,11 +523,11 @@
 					</div>
 				</div>
 			</div>
-		
+
 		<!--弹出框  开始-->
 			<div class="tck" style="width: 500px; height: 200px; position: fixed; left: 30%; top: 30%; background: #fff; display: none;">
 				<div style="width: 500px; height: 50px; background: #D3D3D3; ">
-					<span style="font-size: 24px; padding-left: 20px;">提示</span> 
+					<span style="font-size: 24px; padding-left: 20px;">提示</span>
 					<a href="#"><i style="font-size: 34px; margin-left: 380px; color: black;" class="iconfont">&#xe601;</i></a>
 				</div>
 				<div style="width: 500px; height: 100px; font-size: 20px; padding-left: 20px; line-height: 100px; border-bottom: 1px solid black;">
@@ -526,279 +539,9 @@
 				</div>
 			</div>
 		<!--结束-->
-		
-			<div class="k1-3">
-				<ul class="k13-1">
-					<li><a href="#">商品描述</a></li>
-					<li><a href="#">配镜指南</a></li>
-					<li><a href="#">用户评价(2)</a></li>
-					<li><a href="#">售后服务</a></li>
-					<li><a href="#">港式验光</a></li>
-					<li><a href="#">镜片加工</a></li>
-				</ul>
-				<div class="k13-2">
-					<ul class="k132-1">
-						<li>品牌：LOHO</li>
-						<li>条码：211301161229007</li>
-						<li> 规格：60□17 143</li>
-						<li>架高：52</li>
-						<li>鼻梁宽：17</li>
-						<li>镜架外宽：139</li>
-						<li>镜架宽：60</li>
-						<li>镜腿长：143</li>
-						<li>镜架内宽：137</li>
-						<li>材质：金属</li>
-						<li>边框：全框</li>
-						<li>大小：大框</li>
-						<li>框型：方型</li>
-						<li>价格：201-400</li>
-						<li>元色系: 碳黑色 </li>
-					</ul>
-				</div>
-			</div>
-			<div class="k1-4">
-				<img src="{% static 'img/detail img/1482561976216362.jpg' %}" />
-				<img src="{% static 'img/detail img/1482561976401342.jpg' %}" />
-				<img src="{% static 'img/detail img/1482561976510466.jpg' %}" />
-				<img src="{% static 'img/detail img/1482561976546335.jpg' %}" />
-				<img src="{% static 'img/detail img/1482561976657990.jpg' %}" />
-				<img src="{% static 'img/detail img/1482561978247884.jpg' %}" />
-				<img src="{% static 'img/detail img/1482561979350213.jpg' %}" />
-				<img src="{% static 'img/detail img/1482561978247884.jpg' %}" />
-				<img src="{% static 'img/detail img/1482561978927443.jpg' %}" />
-				<img src="{% static 'img/detail img/1482561978597120.jpg' %}" />
-			</div>	
+
+
 		</div>
 		
-		<div class="box11">
-				<div class="o-1">
-					<div class="o1-1">
-						<dl>
-							<dt>深圳</dt>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">南山世界之窗店</a></dd>
-							<dd><a href="#">宝安海雅缤纷城店</a></dd>
-							<dd><a href="#">福田绿景佐阾虹湾店</a></dd>
-							<dd><a href="#">宝安壹方中心店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-						</dl>
-						<dl>
-							<dt>广州</dt>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">南山世界之窗店</a></dd>
-							<dd><a href="#">宝安海雅缤纷城店</a></dd>
-							<dd><a href="#">福田绿景佐阾虹湾店</a></dd>
-							<dd><a href="#">宝安壹方中心店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-						</dl>
-						<dl>
-							<dt>佛山</dt>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">南山世界之窗店</a></dd>
-							<dd><a href="#">宝安海雅缤纷城店</a></dd>
-							<dd><a href="#">福田绿景佐阾虹湾店</a></dd>
-							<dd><a href="#">宝安壹方中心店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-						</dl>
-						<dl>
-							<dt>东莞</dt>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">南山世界之窗店</a></dd>
-							<dd><a href="#">宝安海雅缤纷城店</a></dd>
-							<dd><a href="#">福田绿景佐阾虹湾店</a></dd>
-							<dd><a href="#">宝安壹方中心店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-							<dd><a href="#">怡景中心城店</a></dd>
-						</dl>
-					</div>		
-				</div>
-				<div class="o-2">
-					<img style="margin-left: 30px;" src="{% static 'img/1471511231313899.jpg' %}" />
-				</div>
-				<div class="o-3">
-					<ul class="o3-1">
-						<li><a href="#">
-							<span>+</span>
-							<span>查看实体店</span><br />
-							&nbsp;&nbsp;<span>View Store</span>
-						</a></li>
-						<li><a href="#">
-							<span>+</span>
-							<span>附近交通</span><br />
-							&nbsp;&nbsp;<span>Direction</span>
-						</a></li>
-						<li><a href="#">
-							<span>+</span>
-							<span>发送店地址到手机</span><br />
-							<span>Send To Mobile</span>
-						</a></li>
-						<li><a href="#">
-							<span>+</span>
-							<span>营业时间</span><br />
-							&nbsp;<span>Business  Hours</span>
-						</a></li>
-					</ul>
-					<div class="o3-2">
-						<p class="o4-1" >免费预约直营店验光<br/>BOOKING</p>
-					</div>
-				</div>	
-			</div>
+
 			
-			<div class="box12">
-				<div class="z-1">
-					<ul class="z1-1">
-						<li>
-							<p class="z1-2"><i class="iconfont">&#xe604;</i><span>线上线下同价</span></p>
-							<p class="z1-3">Online Single-Phase & Three-phase</p>
-						</li>
-						<li>
-							<p class="z1-2"><i class="iconfont">&#xe615;</i><span>港式21步验光</span></p>
-							<p class="z1-3">Hong Kong Style Step 21 Optomety</p>
-						</li>
-						<li>
-							<p class="z1-2"><i class="iconfont">&#xe607;</i><span>线上预约线下体验</span></p>
-							<p class="z1-3">Go Online Booking and Offline Experience</p>
-						</li>
-						<li>
-							<p class="z1-2"><i class="iconfont">&#xe665;</i><span>全国连锁</span></p>
-							<p class="z1-3">Across The country Have Chain Stores</p>
-						</li>
-						<li>
-							<p class="z1-2"><i class="iconfont">&#xe603;</i><span>MTC厂家直销</span></p>
-							<p class="z1-3">Mtc factory Direct Sales Of Products</p>
-						</li>
-						<li>
-							<p class="z1-2"><i class="iconfont">&#xe62a;</i>
-							<span>互联网药品信息服务资格证书</span>
-							<!--<span>证号:（粤）经营性20150019</span>-->
-							</p>
-							<p class="z1-3">InternetDrugInformationServiceQualification</p>
-						</li>
-						<li>
-							<p class="z1-2"><i class="iconfont">&#xe61d;</i>
-							<span>医疗器械许可证</span>
-							<span>粤SZ10484</span>
-							</p>
-							<p class="z1-3">The company Has Medical Device License</p>
-						</li>
-						<li>
-							<p class="z1-2"><i class="iconfont">&#xe606;</i><span>国内O2O配镜电商</span></p>
-							<p class="z1-3">The Best O2O Glasses Company In China</p>
-						</li>
-	
-					</ul>
-				</div>
-				<div class="z-2">
-					因可能存在系统缓存、页面更新导致价格变动异常等不确定性情况出现，如您发现活动商品标价或促销信息有异常，请您立即联系我们，以便我们及时补正。
-				</div>
-				<div class="z-3">
-					<p class="z3-1">
-						<span><i class="iconfont">&#xe607;</i> LOHO眼镜生活在全国已有实体体验店<span class="z3-1-1">236</span>家</span>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<span><i class="iconfont">&#xe637;</i> 客服电话：<span class="z3-1-2">400-887-1920</span> <span class="z3-1-3">09:00-23:00(周一至周日)</span></span>
-					</p>
-					<div class="z3-2">
-						<ul>
-							<li><a href="#">关于LOHO</a></li>
-							<li><a href="#">公司简介</a></li>
-							<li><a href="#">媒体报道</a></li>
-							<li><a href="#">诚聘英才</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">新手指南</a></li>
-							<li><a href="#">会员特权</a></li>
-							<li><a href="#">购物流程</a></li>
-							<li><a href="#">常见问题</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">配眼镜指南</a></li>
-							<li><a href="#">读懂验光单</a></li>
-							<li><a href="#">镜架保养</a></li>
-							<li><a href="#">度数换算</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">配送与支付</a></li>
-							<li><a href="#">发票抬头</a></li>
-							<li><a href="#">配送时效</a></li>
-							<li><a href="#">支付方式</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">服务保证</a></li>
-							<li><a href="#">三包细则</a></li>
-							<li><a href="#">申请退款</a></li>
-							<li><a href="#">发票说明</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">联系我们</a></li>
-							<li><a href="#">客服中心</a></li>
-							<li><a href="#">免责声明</a></li>
-							<li><a href="#">投诉与建议</a></li>
-						</ul>
-						<ul class="z3-2-1">
-							<li class="z3-2-2" style="height: 100px;width: 100px; background: #fff;">
-								<img style="width: 90px; height: 90px; margin: 5px;" src="{% static 'img/QRcode.png' %}" />
-							</li>
-							<li class="z3-2-3">关注LOHO官方微信</li>
-						</ul>
-					</div>
-				</div>
-				<div class="z-4">
-					<ul class="z4-1">
-						<li><a href="#">友情链接:</a></li>
-						<li><a href="#">白酒招商</a></li>
-						<li><a href="#">53货源网</a></li>
-						<li><a href="#">食品招商</a></li>
-						<li><a href="#">珠宝加盟</a></li>
-						<li><a href="#">DR戒指</a></li>
-						<li><a href="#">日本代购</a></li>
-						<li><a href="#">女装批发</a></li>
-						<li><a href="#">音平商城</a></li>
-						<li><a href="#">结婚钻戒</a></li>
-						<li><a href="#">欧宝丽珠宝</a></li>
-						<li><a href="#">返利网</a></li>
-						<li><a href="#">淘狗网</a></li>
-						<li><a href="#">缅甸翡翠</a></li>
-						<li><a href="#">网上购物</a></li>
-						<li><a href="#">特步休闲鞋</a></li>
-						<li><a href="#">村安商城</a></li>
-						<li><a href="#">创业开店</a></li>
-						<li><a href="#">钻石</a></li>
-						<li><a href="#">海外代购</a></li>
-						<li><a href="#">鲜花网</a></li>
-						<li><a href="#">优品惠官方网站</a></li>
-						<li><a href="#">车发发</a></li>
-						<li><a href="#">牌子网</a></li>
-						<li><a href="#">中国眼镜网</a></li>
-						<li><a href="#">批发网</a></li>
-						<li><a href="#">申请友情链接</a></li>
-					
-					</ul>
-				</div>
-				<div class="z-5">
-					<p class="z5-1">
-						<img style="width: 52px; height: 55px;" src="{% static 'img/loho_87.jpg' %}" />
-						<img style="width: 46px; height: 55px;" src="{% static 'img/loho_88.jpg' %}" />
-						<img style="width: 56px; height: 55px;" src="{% static 'img/loho_89.jpg' %}" />
-						<img style="width: 94px; height: 55px;" src="{% static 'img/loho_90.jpg' %}" />
-						<img style="width: 93px; height: 55px;" src="{% static 'img/loho_92.jpg' %}" />
-					</p>
-					<p class="z5-2"><span>ICP备案证书号</span><span>:粤ICP备11106081号</span></p>
-					<p class="z5-2">© 2005-2017 深圳市乐活电子商务有限公司-时尚眼镜品牌 版权所有，并保留所有权利。</p>
-					<p class="z5-2">公司地址：深圳市福田区彩田路彩虹新都彩虹大厦29B</p>
-				</div>
-				<div class="z-6">
-					网站地图 友情链接 ERP系统
-				</div>
-				
-			</div>
-			
-			<img class="dingwei" style="position: absolute; right: 0; top:30%;" src="{% static 'img/dinwei.jpg' %}" />
-	</body>
-</html>
