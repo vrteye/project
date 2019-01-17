@@ -136,3 +136,18 @@ def mycart(request):
 def detail(request):
     return render(request, 'detail.html')
 
+
+def detail2(request):
+    return render(request, 'detail2.html')
+
+
+def detail3(request):
+    return render(request, 'detail3.html')
+
+
+def detail4(request):
+    return render(request, 'detail4.html')
+
+
+def goods(request):
+    return render(request, 'goods.html')

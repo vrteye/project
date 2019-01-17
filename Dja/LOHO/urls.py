@@ -12,6 +12,10 @@ urlpatterns = [
     url(r'^mycart/$', views.mycart, name='mycart'),
     # 商品详情页
     url(r'^detail/$', views.detail, name='detail'),
+    url(r'^detail2/$', views.detail2, name='detail2'),
+    url(r'^goods-6648/$', views.goods, name='goods-6648'),
+    url(r'^detail3/$', views.detail3, name='detail3'),
+    url(r'^detail4/$', views.detail4, name='detail4'),
     ## HttpRequest
     url(r'^gettest/$', views.gettest, name='gettest'),
     url(r'^postview/$', views.postview, name='postview'),

@@ -1,180 +1,31 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>首页</title>
-</head>
-<link rel="stylesheet" href="{% static 'css/shouye.css' %}" />
-		<link rel="stylesheet" href="{% static 'font/iconfont.css' %}" />
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+        <link rel="stylesheet" href="{% static 'css/make.css' %}">
 		<script src="{% static 'js/jquery-1.12.3.js' %}"></script>
-		<script src="{% static 'js/ajax.js' %}"></script>
-{#		<script src="{% static 'js/shouye.js' %}" type=""></script>#}
 		<script src="{% static 'js/jquery.cookie.js' %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'font/iconfont.css' %}"/>
+		<script src="{% static 'js/ajax.js' %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}"/>
+		<script src="{% static 'js/detail1.js' %}"></script>
 		<script src="{% static 'js/gouwucelidedongxi.js' %}"></script>
-        <script>
+		<script>
 			$(function(){
-				if($.cookie("cart")){
-					var count = gouwuce();
-					$(".nmb").html(count);
-				}else{
-					console.log("请先购物");
-				}
+				var count = gouwuce();
+				$(".nmb").html(count);
 			})
 		</script>
-<script>
-
-$(function(){
-	$.get("{% static 'json/shouye.json' %}", function(data){
-	    var arr = data;
-		for(var i=0; i<arr.length; i++){
-			var obj = arr[i];
-			// {#alert(obj.img);#}
-
-			var li = $("<li></li>").appendTo("#list1");
-			$("<img src="+"{% static '' %}"+obj.img+">").appendTo(li);
-			var li2 = $("<li></li>").appendTo("#list2").html("0"+(i+1));
-
-		}
-		lunbo();
-
-	});
-
-
-	function lunbo(){
-		var _ul1 = $("#list1");
-		var _ul2 = $("#list2");
-		var _li1 = $("#list1 li");
-		var _li2 = $("#list2 li");
-
-		//初始化显示第一张图
-		_li1.eq(0).show().siblings().hide();
-
-		//图片总数量
-		var size = $("#list1 li").size(); //4
-
-		//自动轮播
-		var i = 0; //记录图片下标
-		var timer = setInterval(function(){
-			i++;
-			move();
-		}, 2000);
-
-		//移动的函数
-		function move(){
-
-			//如果i超出了图片总数量
-			if (i == size) {
-				i = 0; //即将移动到2张图
-			}
-
-			if (i < 0) {
-				i = size-2;
-			}
-
-			if (i >= size){
-				i = 1;
-			}
-
-			//透明度切换到第i张图
-			_li1.eq(i).stop().fadeIn().siblings().stop().fadeOut();
-
-			//改变ul2的按钮状态
-			_li2.eq(i).removeClass().addClass("active").siblings().removeClass("active");
-
-		}
-
-
-		//上一页
-				$("#prev").click(function(){
-					i--;
-					move();
-//					move2();
-				})
-
-				//下一页
-				$("#next").click(function(){
-					i++;
-					move();
-//					move2();
-				})
-
-
-		//li2上面的按钮
-		_li2.hover(function(){
-			var index = $(this).index();
-			//console.log(index);
-			i = index;
-			move();
-//			move2();
-		});
-
-		//移入box, 移出box
-		$(".lunbo").hover(function(){
-			//移入, 关闭定时器
-			clearInterval(timer);
-		},
-		function(){
-			//移出, 重新开启定时器
-			timer = setInterval(function(){
-				i++;
-				move();
-//				move2();
-			}, 2000);
-		})
-	}
-
-
-
-	var arr = [];
-	$.get("json/mycart.json", function(data){
-		var arr = data;
-
-		for(var i=0; i<arr.length; i++){
-			var obj = arr[i];
-
-			$('<li><a href="#"><img src="'+obj.bigImg+'"/></a></li>').appendTo(".bt");
-
-			$(".bt").on("click","li", function(){
-				var index = $(this).index();
-				var obj = arr[index]
-				location.href = "detail.html?id="+obj.id;
-			})
-		}
-
-	});
-
-
-	$(window).scroll(function(){
-		var gao = $(window).scrollTop()+$(window).height()*0.3
-
-		$(".dingwei").animate({top:gao},30);
-	})
-
-
-
-
-
-
-});
-</script>
+	</head>
 	<body>
-	<!--公用部分 开始-->
 		<div id="hd">
 			<div class="tp">
 				<ul class="tp1">
 					<li><a href="#">Hi~欢迎来到LOHO!</a></li>
-				    {% if phone %}
-                    <li>
-                        用户名：{{ phone }}
-                    </li>
-                        <a href="{% url 'mt:logout' %}">退出</a>
-                    {% else %}
-                        <li>
-                            <li><a href="{% url 'mt:denglu' %}">[请登陆]</a></li>
-					        <li><a href="{% url 'mt:zhuce' %}">[注册]</a></li>
-                        </li>
-                    {% endif %}
+					<li><a href="{% url 'mt:denglu' %}">[请登陆]</a></li>
+					<li><a href="{% url 'mt:zhuce' %}">[注册]</a></li>
 					<li><a href="#">收藏LOHO</a></li>
 				</ul>
 				<ul class="tp2">
@@ -196,7 +47,7 @@ $(function(){
 					<div class="td-3"><a href="#">m 查看店铺</a></div>
 				</div>
 				<div class="td2">
-					<div class="td-4"><a href="#"><img src="{% static 'img/logo.png' %}"></a></div>
+					<div class="td-4"><a href="index.html"><img src="{% static 'img/logo.png' %}"></a></div>
 				</div>
 				<div class="td3">
 					<div class="td-5"><a href="#"><img src="{% static 'img/1465203303405363.jpg' %}"/></a></div>
@@ -206,7 +57,7 @@ $(function(){
 			<div class="tb">
 				<div class="nav">
 					<ul class="nav-1">
-						<li><a href="#">首页</a></li>
+						<li><a href="{% url 'mt:index' %}">首页</a></li>
 						<li><a href="#">新品上市</a></li>
 						<li class="nav1-1"><a href="#">
 							男款眼镜
@@ -345,7 +196,7 @@ $(function(){
 									</div>
 								</div>
 
-								<div class="gy-2"><img src="{% static 'img/1502040887409812332.jpg'%}"/></div>
+								<div class="gy-2"><img src="{% static 'img/1502040887409812332.jpg' %}"/></div>
 							</div>
 						</a></li>
 						<li class="nav1-3"><a href="#">
@@ -395,7 +246,7 @@ $(function(){
 									</div>
 								</div>
 
-								<div class="gy-2"><img src="{% static 'img/1502040899243918946.jpg'%}"/></div>
+								<div class="gy-2"><img src="{% static 'img/1502040899243918946.jpg' %}"/></div>
 							</div>
 						</a></li>
 						<li class="nav1-4"><a href="#">
@@ -413,7 +264,7 @@ $(function(){
 
 								</div>
 
-								<div class="gy-2"><img src="{% static 'img/1500920532158062555.jpg'%}"/></div>
+								<div class="gy-2"><img src="{% static 'img/1500920532158062555.jpg' %}"/></div>
 							</div>
 						</a></li>
 						<li class="nav1-5"><a href="#">
@@ -433,7 +284,7 @@ $(function(){
 
 								</div>
 
-								<div class="gy-2"><img src="{% static 'img/1500920498733152832.jpg'%}"/></div>
+								<div class="gy-2"><img src="{% static 'img/1500920498733152832.jpg' %}"/></div>
 							</div>
 						</a></li>
 						<li class="nav1-6"><a href="#">
@@ -545,445 +396,183 @@ $(function(){
 									</div>
 								</div>
 
-								<div class="gy-2"><img src="{% static 'img/1507482991013830024.jpg'%}"/></div>
+								<div class="gy-2"><img src="{% static 'img/1507482991013830024.jpg' %}"/></div>
 							</div>
 						</li>
 					</ul>
 					<div class="nav-2" style="background: red;">
 						<a href="#">
-							<img class="img3" src="{% static 'img/影院信息-3D眼镜.png'%}" />
+							<img class="img3" src="{% static 'img/影院信息-3D眼镜.png' %}" />
 							<span class="g-2">LOHO线下体验店</span>
 						</a>
 					</div>
 				</div>
 			</div>
 		</div>
-	<!--结束-->
 
-	<!--logo轮播图-->
-		<div class="lunbo">
-			<ul id="list1">
-				<li><a href="#"><img style="width: 100%; height: 500px;" src="{% static 'img/20170916163153_91818.jpg' %}"/></a></li>
-				<li><a href="#"><img style="width: 100%; height: 500px;" src="{% static 'img/20170911185441_83175.jpg' %}"/></a></li>
-				<li><a href="#"><img style="width: 100%; height: 500px;" src="{% static 'img/20170818150250_63464.jpg' %}"/></a></li>
-				<li><a href="#"><img style="width: 100%; height: 500px;" src="{% static 'img/20170915164204_22747.jpg' %}"/></a></li>
-			</ul>
-			<ul id="list2">
-{#				<li class="active">1</li>#}
-{#				<li>2</li>#}
-{#				<li>3</li>#}
-{#				<li>4</li>#}
-			</ul>
 
-			<div id="prev"><i class="iconfont" >&#xe605;</i></div>
-			<div id="next"><i class="iconfont" >&#xe796;</i></div>
-
+		<div class="m-1">
+			<a href="#">首页></a>
+			<a href="#">眼镜></a>
+			<a href="#">男款眼镜></a>
+			 LOHO 光学镜架 金属 枪色金属+玳瑁色板材 复古款 GX9034-C2
 		</div>
 
-		<div class="bg">
-			<div class="box1">
-				<div class="b-1"><a href="#">LOHO特色</a></div>
-				<div class="b-2">
-					<ul class="b2-1">
-						<li>
-							<a href="#"><img src="{% static 'img/1505359680934732.jpg'%}"/></a>
-						</li>
-						<li>
-							<a href="#"><img src="{% static 'img/1500948825562772.jpg' %}"/></a>
-						</li>
-						<li>
-							<a href="#"><img src="{% static 'img/1500948778800632.jpg' %}"/></a>
-						</li>
-						<li>
-							<a href="#"><img src="{% static 'img/1500948731192724.jpg'%}"/></a>
-						</li>
+		<div class="k-1">
+			<div class="k1-2">
+				<div class="k2-1">
+					<div class="k2-1-1">
+						<img class="img1" style="width: 600px; height: 237px;" src="{% static 'img/detail img/G_1479874651263638870.jpg' %}" />
+						<div style="display: none;" class="k211-1 makt-div"></div>
+					</div>
+					<div class="k2-1-2">
+						<img class="img3" style=" position: relative; left: 0; top: 0; width: 900px; height: 600px;" src="{% static 'img/detail img/G_1479874651263638870.jpg'%}" />
+					</div>
+					<div class="k2-1-3">
+						<ul class="k212-1">
+							<li><img style="width: 162px; height: 65px;" src="{% static 'img/detail img/G_1479874651263638870.jpg' %}"</li>
+							<li><img style="width: 162px; height: 65px;" src="{% static 'img/detail img/G_1480468559080233329.jpg' %}"</li>
+							<li><img style="width: 162px; height: 65px;" src="{% static 'img/detail img/G_1480560734221768497.jpg' %}"</li>
+						</ul>
+					</div>
+					<div class="k2-1-4">
+						<div class="k214-1">
+							<img src="{% static 'img/detail img/lohostore.jpg' %}" />
+						</div>
+						<div class="k214-2">
+							<h3>体验店地址:</h3>
+							<p>您可以到全国(239)家体验店免费验光 查看地图</p>
+							<p>
+								<span class="k214-2-1"></span>
+								<span class="k214-2-1"></span>
+								<span class="k214-2-1"></span>
+								<span class="k214-2-1"></span>
+								<span class="k214-2-1"></span>
+								<span class="k214-2-1"></span>
+							</p>
+							<p>免费发送地址到手机</p>
+						</div>
+					</div>
+				</div>
+				<div class="k2-2">
+					<div class="k2-2-1">
+						<h2>LOHO 光学镜架 金属 枪色金属+玳瑁色板材 复古款 GX9034-C4</h2>
+                        <hr>
+					</div>
+					<div class="k2-2-2">
+						<ul class="a-1">
+							<li><span>LOHO价：</span><span class="a1-1">￥ 594</span></li>
+							<li>已售：150 副销售详情用户评价：(已有7人评价)</li>
+							<li class="clearfix">
+								<span class="a1-2">颜色</span>
+								<span class="a1-2">
+									<img style="width: 76px; height: 31px;" src="{% static 'img/detail img/G_1479874825882712598.jpg' %}" />
+									<br />
+									枪色
+								</span>
+								<span class="a1-2">
+									<img style="width: 76px; height: 31px;" src="{% static 'img/detail img/G_1479874651263638870.jpg' %}" />
+									<br />
+									铜色金属+玳
+									<br/>
+									&nbsp; &nbsp; 瑁色板材
+								</span>
+							</li>
+							<li>
+								<span>数量</span>
+								<a class="a1-3" href="#">-</a>
+								<input class="a1-4" type="number" value="1"/>
+								<a class="a1-3" href="#">+</a>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<span class="a1-5">在线咨询</span>
+							</li>
+						</ul>
+						<div class="b-1 clearfix">
+							<div class="b1-1">
+								<a class="b11-1">
+									<i style="font-size: 26px;" class="iconfont">&#xe611;</i>
+									点击购买
+								</a>
+							</div>
+							<div class="b1-2">♥ 免费预约直营店验光</div>
+						</div>
+					</div>
+
+					<div class="k2-2-3">
+						<p>PROMISE/服务承诺：</p>
+						<p>01.线上线下同价&nbsp;&nbsp;&nbsp; 02.免费港式验光&nbsp;&nbsp;&nbsp; 03.7天退换</p>
+						<p>04.终身免费保养</p>
+						<p>本款产品在全国239家连锁店均有销售</p>
+						<p>
+							<i class="iconfont"></i>分享
+							<i class="iconfont"></i>收藏商品
+						</p>
+					</div>
+				</div>
+			</div>
+
+		<!--弹出框  开始-->
+			<div class="tck" style="width: 500px; height: 200px; position: fixed; left: 30%; top: 30%; background: #fff; display: none;">
+				<div style="width: 500px; height: 50px; background: #D3D3D3; ">
+					<span style="font-size: 24px; padding-left: 20px;">提示</span>
+					<a href="#"><i style="font-size: 34px; margin-left: 380px; color: black;" class="iconfont">&#xe601;</i></a>
+				</div>
+				<div style="width: 500px; height: 100px; font-size: 20px; padding-left: 20px; line-height: 100px; border-bottom: 1px solid black;">
+					您购买的商品已添加到购物车，要去看看？
+				</div>
+				<div style="width: 500px; height: 50px; line-height: 300px; text-align: center; line-height: 30px;">
+					<a href="mycart.html"><span style="width: 80px; height: 30px; margin-top: 10px; background: orange; display: inline-block; color: #fff;">确定</span></a>
+					<span style="width: 80px; height: 30px; margin-top: 10px; background: greenyellow; display: inline-block; color: #fff;">取消</span>
+				</div>
+			</div>
+		<!--结束-->
+
+			<div class="k1-3">
+				<ul class="k13-1">
+					<li><a href="#">商品描述</a></li>
+					<li><a href="#">配镜指南</a></li>
+					<li><a href="#">用户评价(2)</a></li>
+					<li><a href="#">售后服务</a></li>
+					<li><a href="#">港式验光</a></li>
+					<li><a href="#">镜片加工</a></li>
+				</ul>
+				<div class="k13-2">
+					<ul class="k132-1">
+						<li>品牌：LOHO</li>
+						<li>条码：211301161229007</li>
+						<li> 规格：60□17 143</li>
+						<li>架高：52</li>
+						<li>鼻梁宽：17</li>
+						<li>镜架外宽：139</li>
+						<li>镜架宽：60</li>
+						<li>镜腿长：143</li>
+						<li>镜架内宽：137</li>
+						<li>材质：金属</li>
+						<li>边框：全框</li>
+						<li>大小：大框</li>
+						<li>框型：方型</li>
+						<li>价格：201-400</li>
+						<li>元色系: 碳黑色 </li>
 					</ul>
-
-					<div class="b2-2">
-						<a href="#"><img src="{% static 'img/1498441407736561.jpg' %}"/></a>
-					</div>
-
-					<ul class="b2-3">
-						<li><a href="#"><img src="{% static 'img/1486612115903782.jpg'%}"/></a></li>
-						<li><a href="#"><img src="{% static 'img/1486612115903782.jpg' %}"/></a></li>
-					</ul>
 				</div>
 			</div>
-
-		<!--下面是重复 部分   开始-->
-			<div class="box2">
-				<div class="bo-1"><a href="#">1F 新品上市</a></div>
-				<div class="bo-2">
-					<div class="bo2-1">
-						<div>
-							<a href="#"><img class="bo2-1-2" src="{% static 'img/1483095060594439.jpg' %}"/></a>
-							<ul class="bo2-1-1">
-								<li><a href="#">太阳眼镜</a></li>
-								<li><a href="#">男款眼镜</a></li>
-								<li><a href="#">女款眼镜</a></li>
-								<li><a href="#">光学眼镜</a></li>
-							</ul>
-						</div>
-						<div>
-							<ul class="bo2-1-3">
-								<li><a href="#">2017太阳镜，全新上市</a></li>
-								<li><a href="#">LOHO轻奢眼镜-α系列</a></li>
-								<li><a href="#">都市魅影“active”圆框太阳镜</a></li>
-								<li><a href="#">LOHO碳纤维眼镜，全面淘汰钛架</a></li>
-								<li><a href="#">LOHO防辐射眼镜，抵御蓝光</a></li>
-								<li><a href="#">特殊混合工艺光学镜系列</a></li>
-							</ul>
-						</div>
-						<span class="control">
-							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
-							</i>
-							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>
-						</span>
-					</div>
-					<div class="bo2-2">
-						<a href="#"><img src="{% static 'img/1489829778943400.jpg' %}"/></a>
-					</div>
-					<div class="bo2-3">
-						<ul class="bo2-1-4 bt">
-							<li><a href="{% url 'mt:detail' %}"><img src="{% static 'img/1506507493610664.jpg' %}"/></a></li>
-							<li><a href="{% url 'mt:detail2' %}"><img src="{% static 'img/1506507516457263.jpg' %}"/></a></li>
-							<li><a href="{% url 'mt:detail3' %}"><img src="{% static 'img/1506507510124942.jpg' %}"/></a></li>
-							<li><a href="{% url 'mt:detail4'%}"><img src="{% static 'img/1506507503746971.jpg' %}"/></a></li>
-						</ul>
-					</div>
-				</div>
+			<div class="k1-4">
+				<img src="{% static 'img/detail img/1482561976216362.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561976401342.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561976510466.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561976546335.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561976657990.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561978247884.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561979350213.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561978247884.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561978927443.jpg' %}" />
+				<img src="{% static 'img/detail img/1482561978597120.jpg' %}" />
 			</div>
-		<!--结束	-->
+		</div>
 
-			<div class="box3">
-				<div class="bo-1"><a href="#">2F 新品上市</a></div>
-				<div class="bo-2">
-					<div class="bo2-1">
-						<div>
-							<a href="#"><img class="bo2-1-2" src="{% static 'img/1501833311124429.jpg' %}"/></a>
-							<ul class="bo2-1-1">
-								<li><a href="#">板材太阳镜</a></li>
-								<li><a href="#">金属太阳镜</a></li>
-								<li><a href="#">TR太阳镜</a></li>
-								<li><a href="#">钛架太阳镜</a></li>
-							</ul>
-						</div>
-						<div>
-							<ul class="bo2-1-3">
-								<li><a href="#">高端轻奢α系列-太阳镜</a></li>
-								<li><a href="#">近视太阳镜-炎炎夏日 不再妥协</a></li>
-								<li><a href="#">2017LOHO太阳镜-“aviators”</a></li>
-								<li><a href="#">LOHO年轻时尚太阳镜</a></li>
-								<li><a href="#">VINGTANS时尚太阳镜系列</a></li>
-								<li><a href="#">偏光太阳镜系列</a></li>
-							</ul>
-						</div>
-						<span class="control">
-							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
-							</i>
-							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>
-						</span>
-					</div>
-					<div class="bo2-2">
-						<a href="#"><img src="{% static 'img/1489829839255824.jpg' %}"/></a>
-					</div>
-					<div class="bo2-3">
-						<ul class="bo2-1-4">
-							<li><a href="#"><img src="{% static 'img/1506507735373475.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507729735751.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507722188155.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507716992624.jpg' %}"/></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="box4">
-				<div class="bo-1"><a href="#">3F 碳纤维镜框</a></div>
-				<div class="bo-2">
-					<div class="bo2-1">
-						<div>
-							<a href="#"><img class="bo2-1-2" src="{% static 'img/1483095060594439.jpg' %}"/></a>
-							<ul class="bo2-1-1">
-								<li><a href="#">半框</a></li>
-								<li><a href="#">全框</a></li>
-								<li><a href="#">方框</a></li>
-								<li><a href="#">圆框</a></li>
-							</ul>
-						</div>
-						<div>
-							<ul class="bo2-1-3">
-								<li><a href="#">女款碳纤维眼镜</a></li>
-								<li><a href="#">德国进口碳纤维，质量有保障</a></li>
-								<li><a href="#">半框碳纤维眼镜，商务精英优选</a></li>
-								<li><a href="#">7.87g重量，超级轻盈</a></li>
-								<li><a href="#">碳纤维材质的发展历程</a></li>
-								<li><a href="#">热销碳纤维眼镜，超高好评</a></li>
-							</ul>
-						</div>
-						<span class="control">
-							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
-							</i>
-							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>
-						</span>
-					</div>
-					<div class="bo2-2">
-						<a href="#"><img src="{% static 'img/1482803886262425.jpg' %}"/></a>
-					</div>
-					<div class="bo2-3">
-						<ul class="bo2-1-4">
-							<li><a href="#"><img src="{% static 'img/1506507557172916.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507550376850.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507534806816.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507542115473.jpg' %}"/></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="box5">
-				<div class="bo-1"><a href="#">4F 板材镜框</a></div>
-				<div class="bo-2">
-					<div class="bo2-1">
-						<div>
-							<a href="#"><img class="bo2-1-2" src="{% static 'img/1483095060594439.jpg' %}"/></a>
-							<ul class="bo2-1-1">
-								<li><a href="#">复古款</a></li>
-								<li><a href="#">时尚款</a></li>
-								<li><a href="#">极客款</a></li>
-								<li><a href="#">经典款</a></li>
-							</ul>
-						</div>
-						<div>
-							<ul class="bo2-1-3">
-								<li><a href="#">超轻板材，轻装上镜</a></li>
-								<li><a href="#">新超薄板材-Thinner&Lighter</a></li>
-								<li><a href="#">高端轻奢α系列-板材镜框</a></li>
-								<li><a href="#">创意拼接-只为给您舒适的体验</a></li>
-								<li><a href="#">GOLDEN TIMES流金岁月-美好 复古</a></li>
-								<li><a href="#">VINGTANS板材-潮流年轻 彰显个性</a></li>
-							</ul>
-						</div>
-						<span class="control">
-							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
-							</i>
-							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>
-						</span>
-					</div>
-					<div class="bo2-2">
-						<a href="#"><img src="{% static 'img/1482804146103830.jpg' %}"/></a>
-					</div>
-					<div class="bo2-3">
-						<ul class="bo2-1-4">
-							<li><a href="#"><img src="{% static 'img/1506507654107134.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507647119879.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507641154890.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507634925910.jpg' %}"/></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="box6">
-				<div class="bo-1"><a href="#">5F 纯钛镜框</a></div>
-				<div class="bo-2">
-					<div class="bo2-1">
-						<div>
-							<a href="#"><img class="bo2-1-2" src="{% static 'img/1483095060594439.jpg' %}"/></a>
-							<ul class="bo2-1-1">
-								<li><a href="#">圆形脸</a></li>
-								<li><a href="#">方形脸</a></li>
-								<li><a href="#">椭圆形脸</a></li>
-								<li><a href="#">无框</a></li>
-							</ul>
-						</div>
-						<div>
-							<ul class="bo2-1-3">
-								<li><a href="#">钛然自若 商务典范-钛片系列</a></li>
-								<li><a href="#">日本进口钛合金-钛潮系列</a></li>
-								<li><a href="#">手工打磨 离子镀膜-钛板系列</a></li>
-								<li><a href="#">超高品质 再度升级-钛元素2.0</a></li>
-								<li><a href="#">阿尔法钛架 精致高端</a></li>
-								<li><a href="#">轻薄舒适-纯钛太阳镜系列</a></li>
-							</ul>
-						</div>
-						<span class="control">
-							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
-							</i>
-							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>
-						</span>
-					</div>
-					<div class="bo2-2">
-						<a href="#"><img src="{% static 'img/1482804202657630.jpg' %}"/></a>
-					</div>
-					<div class="bo2-3">
-						<ul class="bo2-1-4">
-							<li><a href="#"><img src="{% static 'img/1506507706213751.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507701713922.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507693162976.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1506507667496517.jpg' %}"/></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="box7">
-				<div class="bo-1"><a href="#">6F 品牌镜片</a></div>
-				<div class="bo-2">
-					<div class="bo2-1">
-						<div>
-							<a href="#"><img class="bo2-1-2" src="{% static 'img/1444204884255352.jpg' %}"/></a>
-							<ul class="bo2-1-1">
-								<li><a href="#">LOHO</a></li>
-								<li><a href="#">依视路</a></li>
-								<li><a href="#">蔡司</a></li>
-
-							</ul>
-						</div>
-						<div>
-							<ul class="bo2-1-3">
-								<li><a href="#">渐进多焦点镜片-舒适的远中近视觉</a></li>
-								<li><a href="#">防辐射镜片-阻隔蓝光 缓解疲劳</a></li>
-								<li><a href="#">染色镜片-近视染色片 一镜多用</a></li>
-								<li><a href="#">变色镜片-室内室外 一副搞定</a></li>
-								<li><a href="#">抗疲劳片-缓解视疲劳 保护眼睛</a></li>
-								<li><a href="#">单光片-多层镀膜 高折射率</a></li>
-							</ul>
-						</div>
-						<span class="control">
-							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
-							</i>
-							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>
-						</span>
-					</div>
-					<div class="bo2-2">
-						<a href="#"><img src="{% static 'img/1442195487390197.jpg' %}"/></a>
-					</div>
-					<div class="bo2-3">
-						<ul class="bo2-1-4">
-							<li><a href="#"><img src="{% static 'img/1450924489699332.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1450924505810811.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1450924520969115.jpg' %}"/></a></li>
-							<li><a href="#"><img src="{% static 'img/1482993102186855.jpg' %}"/></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="box8">
-				<div class="x-1">
-					<a href="#"><img src="{% static 'img/1502961222327943.jpg' %}"></a>
-				</div>
-				<div class="x-2">
-					<div>
-						<a href="#">全国236家连锁实体店欢迎您！</a>
-						<span class="x3-1">
-							<img src="{% static 'img/bg3.jpg' %}" />
-							<a href="#"> 查找您身边的实体店</a>
-						</span>
-					</div>
-					<div>
-						<a href="#"><img src="{% static 'img/dianmianxi.jpg' %}"/></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="box9">
+		<div class="box11">
 				<div class="o-1">
-					<ul class="o1-1">
-						<li>商场公告</li>
-						<li>最新资讯</li>
-					</ul>
-					<ul class="o1-2">
-						<li><a href="#">721年中大促-依视路1折秒杀获奖名单</a></li>
-						<li><a href="#">2017年3月24日-26日LOHO眼镜生活南宁万象</a></li>
-						<li><a href="#">2017年3月17日-19日LOHO眼镜生活西安太白</a></li>
-						<li><a href="#">2017年2月10日-12日LOHO眼镜生活成都国际</a></li>
-						<li><a href="#">2017年2月10日-12日LOHO眼镜生活北京君太</a></li>
-						<li><a href="#">2017年2月17日-19日LOHO眼镜生活深圳福田</a></li>
-						<li><a href="#">2017年2月17日-19日LOHO眼镜生活成都银石</a></li>
-					</ul>
-					<!--<ul>
-						<li><a href="#">[商城公告] 721年中大促-依视路1折秒杀获...	</a></li>
-						<li><a href="#">[商城公告] 2017年3月24日-26日LO...</a></li>
-						<li><a href="#">[商城公告] 2017年3月17日-19日LO...	</a></li>
-						<li><a href="#">[商城公告] 2017年2月10日-12日LO...	</a></li>
-						<li><a href="#">[验光配镜] 屈光参差配镜原则</a></li>
-						<li><a href="#">[眼镜导购] 新眼镜佩戴为什么会不适应？</a></li>
-						<li><a href="#">[眼镜资讯] Valentino 2017新款...</a></li>
-					</ul>-->
-				</div>
-				<div class="o-2">
-					<div class="o2-1">&nbsp; &nbsp; &nbsp;  最新评论</div>
-					<ul class="o2-2">
-						<li>
-							<div><img class="o2-2-1" src="{% static 'img/G_1477266342822425907.jpg' %}" /></div>
-							<div>
-								<p>lhsj_131******610(2017年10月15日 23:25:52)</p>
-								<p>评论： 喜欢 很好看 而且有活动很划算</p>
-								<p>标签：</p>
-							</div>
-						</li>
-						<li>
-							<div><img class="o2-2-1" src="{% static 'img/1199_thumb_min_G_1423505225674.jpg' %}" /></div>
-							<div>
-								<p>lhsj_131******610(2017年10月15日 23:25:52)</p>
-								<p>评论： 喜欢 很好看 而且有活动很划算</p>
-								<p>标签：</p>
-							</div>
-						</li>
-						<li>
-							<div><img class="o2-2-1" src="{% static 'img/G_1505427910875044678.jpg'%}" /></div>
-							<div>
-								<p>lhsj_131******610(2017年10月15日 23:25:52)</p>
-								<p>评论： 喜欢 很好看 而且有活动很划算</p>
-								<p>标签：</p>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="o-3">
-					<div class="o3-1">&nbsp; &nbsp; &nbsp; 买家show</div>
-					<div>
-						<a href="#"><img class="o3-2" src="{% static 'img/1431420054640944.jpg' %}"/></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="box10">
-				<div class="y-1">
-					体验店(目前全国有236家直营体验店)
-				</div>
-				<div class="y-2">
-					<a href="#">
-						<img src="{% static 'img/1438394751654589.jpg' %}"/>
-						<img style="margin-left: 4px;" src="{% static 'img/1438393917244993.jpg' %}"/>
-						<img style="width: 391px; height: 196px;" src="{% static 'img/1461060893485519.jpg' %}"/>
-					</a>
-				</div>
-			</div>
-
-			<div class="box11">
-				<div class="k-1">
-					<div class="k1-1">
+					<div class="o1-1">
 						<dl>
 							<dt>深圳</dt>
 							<dd><a href="#">怡景中心城店</a></dd>
@@ -1030,11 +619,11 @@ $(function(){
 						</dl>
 					</div>
 				</div>
-				<div class="k-2">
+				<div class="o-2">
 					<img style="margin-left: 30px;" src="{% static 'img/1471511231313899.jpg' %}" />
 				</div>
-				<div class="k-3">
-					<ul class="k3-1">
+				<div class="o-3">
+					<ul class="o3-1">
 						<li><a href="#">
 							<span>+</span>
 							<span>查看实体店</span><br />
@@ -1056,8 +645,8 @@ $(function(){
 							&nbsp;<span>Business  Hours</span>
 						</a></li>
 					</ul>
-					<div class="k3-2">
-						<p class="k4-1" >免费预约直营店验光<br/>BOOKING</p>
+					<div class="o3-2">
+						<p class="o4-1" >免费预约直营店验光<br/>BOOKING</p>
 					</div>
 				</div>
 			</div>
@@ -1210,9 +799,6 @@ $(function(){
 
 			</div>
 
-		</div>
-
-		<img class="dingwei" style="position: absolute; right: 0; top:30%;" src="{% static 'img/dinwei.jpg' %}" />
-
+			<img class="dingwei" style="position: absolute; right: 0; top:30%;" src="{% static 'img/dinwei.jpg' %}" />
 	</body>
 </html>
